@@ -266,12 +266,12 @@
   <section id="contact" class="section">
   <div class="contact-section">
     <img src="images/about/contactme.png" alt="Contact Me" class="contact-title-img">
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+<form action="mailto:chrissy@dashboardsanddaydreams.com" method="POST" enctype="text/plain">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
   </div>
 
   <!-- Footer -->
