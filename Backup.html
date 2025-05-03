@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Section</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+.about-section {
+  background-color: #034C52;
+  padding: 60px 20px;
+  color: #FCDBD5;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-img img {
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #F48D79;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-header-img {
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.about-text h2 {
+  margin-bottom: 1px; /* Reduce this value */
+}
+
+
+/* Updated CSS for Projects Section */
+.projects-section {
+  background-color: #034C52 !important; /* Emerald Green */
+  padding: 50px 0;
+}
+
+.projects-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #F48D79; /* Make heading visible on dark background */
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background-color: #FCDBD5; /* Light card on dark section */
+  border: none;
+}
+
+.card-img-top {
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #8b4263; /* Match the section’s theme */
+}
+
+.card-text {
+  margin-bottom: 15px;
+  color: #51395b; /* Dark readable text */
+}
+
+/* Button Customization */
+/* Primary Button */
+.btn-primary {
+  background-color: #034C52;
+  border-color: #026773;
+  color: #FCDBD5;
+  box-shadow: none; /* remove Bootstrap's default focus glow */
+}
+
+.btn-primary:hover {
+  background-color: #F48D79;
+  border-color: #826E67;
+  color: #034C52;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  background-color: #022F33;
+  border-color: #014144;
+  color: #FCDBD5;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: #F48D79;
+  color: #034C52;
+  border: 1px solid #826E67;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background-color: #034C52;
+  color: #FCDBD5;
+  border-color: #026773;
+}
+
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:focus-visible {
+  background-color: #C46E61;
+  border-color: #6A534D;
+  color: #FCDBD5;
+  outline: none;
+  box-shadow: none;
+}
+
+:focus-visible {
+  outline: 2px dashed #F48D79; /* subtle, accessible alternative */
+  outline-offset: 2px;
+}
+
+/* Skills Section Styling */
+.skills-section {
+  background-color: #034C52;
+  color: #FCDBD5;
+}
+
+.skill-card {
+  border: none;
+  background-color: #FCDBD5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Top Area with Logo */
+.skill-img {
+  background-color: #686762;
+  padding: 1rem;
+  text-align: center;
+}
+
+.skill-img img {
+  max-height: 100px;
+  object-fit: contain;
+}
+
+/* Centered content for smaller cards */
+.card-body {
+  text-align: center;
+}
+
+.card-title {
+  color: #034C52;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.card-text {
+  color: #51395B;
+}
+
+/* Remove links (just in case any remain) */
+.skills-section .btn {
+  display: none;
+}
+
+/* === Certificates Section Styling === */
+.certificates-section {
+  background-color: #034C52;
+  color: #FCDBD5;
+}
+
+.cert-card {
+  background-color: #FCDBD5;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Certificate Image Band */
+.cert-img {
+  background-color: #5C6460;
+  text-align: center;
+  padding: 1rem;
+}
+
+.cert-img img {
+  max-height: 100px;
+  object-fit: contain;
+}
+
+/* Certificate Text */
+.cert-card .card-title {
+  color: #034C52;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.cert-card .card-text {
+  color: #5C6460;
+  font-size: 0.9rem;
+}
+
+/* Buttons (matching project styles) */
+.btn-primary {
+  background-color: #034C52;
+  border-color: #026773;
+  color: #FCDBD5;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #F48D79;
+  border-color: #826E67;
+  color: #034C52;
+  transform: scale(1.05);
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: #022F33;
+  border-color: #014144;
+  color: #FCDBD5;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background-color: #F48D79;
+  color: #034C52;
+  border: 1px solid #826E67;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #034C52;
+  color: #FCDBD5;
+  border-color: #026773;
+  transform: scale(1.05);
+}
+
+.btn-secondary:active,
+.btn-secondary:focus {
+  background-color: #C46E61;
+  border-color: #6A534D;
+  color: #FCDBD5;
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+/* Contact Section Matching Navbar Style */
+.contact-section {
+  position: relative;
+  background-image: url('images/about/tile4.png'); /* Same tile as navbar */
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top;
+  color: #FCEFEA; /* Soft white for better contrast */
+  padding: 80px 20px;
+  z-index: 1;
+}
+
+/* Optional: Overlay for readability */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(81, 57, 91, 0.6); /* Tint like the navbar */
+  z-index: 0;
+}
+
+/* Bring content above overlay */
+.contact-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Social Icons */
+.social-icon {
+  height: 30px;
+  width: 30px;
+  margin-bottom: 8px;
+}
+
+.contact-section {
+  position: relative;
+  background-image: url('images/about/tile5.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  color: #FCEFEA;
+  padding: 80px 20px;
+  z-index: 1;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #F48D79;
+}
+
+.contact-subtext {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #FCEFEA;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+}
+
+.btn-primary {
+  background-color: #F48D79;
+  color: #51395B; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #e3715d;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.contact-header-img {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.contact-section a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar with Local Tiled Background */
+.navbar.custom-navbar {
+  background-image: url('images/about/tile5.jpg'); /* Local tile image path */
+  background-repeat: repeat; /* Seamless tiling */
+  background-size: auto; /* Use natural image size */
+  background-position: top;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1030; /* Ensure it's above all other content */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Optional: Overlay for better readability */
+.navbar.custom-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(81, 57, 91, 0.5); /* #51395B with 50% opacity */
+  z-index: 0;
+}
+
+/* Ensure navbar content appears above overlay */
+.navbar.custom-navbar .container,
+.navbar.custom-navbar .navbar-nav,
+.navbar.custom-navbar .navbar-brand {
+  position: relative;
+  z-index: 1;
+}
+
+/* Style for normal nav links */
+.navbar.custom-navbar .nav-link {
+  color: #034C52; /* soft coral tone matching your branding */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Style for hover effect */
+.navbar.custom-navbar .nav-link:hover,
+.navbar.custom-navbar .nav-link:focus {
+  color: #FFD8C2; /* warm peach highlight */
+  text-decoration: underline;
+}
+
+/* Style for active/current page link */
+.navbar.custom-navbar .nav-item.active .nav-link {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.about-section,
+#about {
+  padding-top: 100px; /* Increased from 120px to add more vertical space */
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- About Me Section -->
+<section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-img">
+        <img src="images/about/Profile pic.png" alt="Christine Vargas">
+      </div>
+      <div class="about-text">
+        <img src="images/about/AB.png" alt="About Me" class="about-header-img">
+        <p>Hey there! I’m Christine Vargas — a data analyst who believes dashboards should not only inform, but inspire.</p>
+        <p>With a background in HR operations, project coordination, and business intelligence, I specialize in turning raw data into meaningful stories. Whether I’m analyzing Netflix trends or building people analytics dashboards in Power BI or Tableau, I’m all about making complex info simple, visual, and actionable.</p>
+        <p>I work with tools like Power BI, Tableau, SQL, Excel, and Workday, blending technical skill with a creative approach to design. My favorite projects? The ones where data actually solves a problem — or makes someone say, “Whoa, that’s cool.”</p>
+        <p>Outside of dashboards, you’ll usually find me gaming (RPGs and cozy sims are my jam), exploring new ways to streamline everything, or hanging out with my two mischievous Sphynx cats, Cleopatra and Vesper, who are basically my project managers.</p>
+        <p>Take a look around — and feel free to reach out if you want to chat dashboards, data, or your favorite gaming side quest!</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light py-5">
+    <div class="container">
+      <!-- Banner Image -->
+      <div class="text-center mb-4">
+        <img src="images/about/Projects_2.png" alt="Projects Banner"style="max-height: 40px; width: auto;">
+      </div>
+      <div class="row">
+        <!-- Project Cards -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="p-3">
+              <img src="images/projects/HR Tableau 1.png" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="HR Tableau Project">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">HR Tableau Project</h5>
+              <p class="card-text flex-grow-1">Developed an interactive Tableau dashboard to visualize key HR metrics including headcount, turnover, tenure, and diversity across departments and job levels. Used calculated fields, parameters, and filters to explore workforce trends. Helped HR teams make data-driven decisions around talent, engagement, and planning.</p>
+              <div>
+                <a href="#" class="btn btn-primary">View Live</a>
+                <a href="#" class="btn btn-secondary">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="p-3">
+              <img src="images/projects/Netflix Power BI.png" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="Netflix Power BI Project">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Netflix Power BI Project</h5>
+              <p class="card-text flex-grow-1">Built an interactive Power BI dashboard analyzing Netflix content across global markets. Visualized trends in genre, viewer ratings, and top-performing countries. Used DAX measures and filters to assess engagement and storytelling across platforms.</p>
+              <div>
+                <a href="#" class="btn btn-primary">View Live</a>
+                <a href="#" class="btn btn-secondary">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="p-3">
+              <img src="images/projects/Screenshot 2025-05-02 180035.png" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="SQL Project">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">SQL</h5>
+              <p class="card-text flex-grow-1">In Progress</p>
+              <div>
+                <a href="#" class="btn btn-primary">View Live</a>
+                <a href="#" class="btn btn-secondary">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section py-5">
+    <div class="container">
+      <!-- Title image -->
+      <div class="text-center mb-5">
+        <img src="images/about/Skills.png" alt="Skills Heading" style="max-height: 40px; width: auto;">
+      </div>
+  
+      <div class="row justify-content-center">
+        <!-- Skill Cards -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card skill-card h-100">
+            <div class="skill-img bg-icon">
+              <img src="images/skills/Tableau Logo.png" class="card-img-top" alt="Tableau">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Tableau</h5>
+              <p class="card-text">Visual analytics and interactive dashboards for HR, operations, and business insights.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card skill-card h-100">
+            <div class="skill-img bg-icon">
+              <img src="images/skills/Power BI Logo.png" class="card-img-top" alt="Power BI">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Power BI</h5>
+              <p class="card-text">Interactive reports, DAX calculations, and visuals to support real-time decision making.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card skill-card h-100">
+            <div class="skill-img bg-icon">
+              <img src="images/skills/SQL Logo.png" class="card-img-top" alt="SQL">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">SQL</h5>
+              <p class="card-text">Data extraction, cleaning, and transformation using structured queries and joins.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card skill-card h-100">
+            <div class="skill-img bg-icon">
+              <img src="images/skills/excel.png" class="card-img-top" alt="Excel">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Excel</h5>
+              <p class="card-text">Advanced formulas, pivot tables, and data validation for reporting and automation.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Centered Bottom Row -->
+        <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
+          <div class="card skill-card h-100">
+            <div class="skill-img bg-icon">
+              <img src="images/skills/Smartsheet Logo.png" class="card-img-top" alt="Smartsheet">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Smartsheet</h5>
+              <p class="card-text">Project planning, team collaboration, and dashboard tracking through smart templates and workflows.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
+          <div class="card skill-card h-100">
+            <div class="skill-img bg-icon">
+              <img src="images/skills/Workday Logo.png" class="card-img-top" alt="Workday">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Workday</h5>
+              <p class="card-text">Project planning, team collaboration, and dashboard tracking through smart templates and workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Certificates Section -->
+<section id="certificates" class="certificates-section py-5">
+    <div class="container">
+      <!-- Title image -->
+      <div class="text-center mb-5">
+        <img src="images/about/certificate (Youtube Banner).png" alt="Certificates Heading" style="max-height: 40px; width: auto;">
+      </div>
+  
+      <div class="row justify-content-center">
+        <!-- Certificate 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Google Data Analytics">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Google Data Analytics</h5>
+              <p class="card-text">Data Analysis, SQL, Spreadsheet Software, Business Analysis, Business Communication, Data Visualization, Data Management, General Statistics</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/54b3e237fcea6a032fc460ed57e22611" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/professional-certificates/google-data-analytics" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Google Advanced Data Analytics">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Google Advanced Data Analytics</h5>
+              <p class="card-text">Predictive Modeling, Kaggle, Data Analysis, Data Science, Exploratory Data Analysis (EDA), Jupyter Notebook, Data Visualization, Teablau, Statistical Analysis, Machine Learning, Regression Models, Phython Programming</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/a7858236a4203eeb726a47a8a683ee09" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/professional-certificates/google-data-analytics" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Google Business Intelligence">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Google Business Intelligence</h5>
+              <p class="card-text">Sheets, Data Analysis, Business Process, Data Modeling, Dashboarding and Reporting, Business Analysis, Data Visualization, Bigquery, Tableau Software, Extraction, Transformation And Loading (ETL), Business Intelligence, SQL</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/25e3664fc4c8f9e1e3e39cc25bcf3886" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/professional-certificates/google-business-intelligence" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Excel Advanced">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Tableau Business Intelligence Analyst</h5>
+              <p class="card-text">Reporting Skills, Data Management, Data Analysis, Presentation Skills, Tableau Software, Data Visualizations</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/ba7bfe0cffb2d9858d923d3fc970e099" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/professional-certificates/tableau-business-intelligence-analyst" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 5 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Tableau Certification">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Business Analytics</h5>
+              <p class="card-text">Spreadsheet Software, Operations Management, Customer Analytics, Data Analysis, Mathematics, Leadership and Management, Probability & Statistics, Business Analysis, Business Analytics, Market Research, Human Resources, Accounting</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/328bd0c53afe9f0248a9c13564994bff" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/specializations/business-analytics" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 6 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="From Excel to Power BI">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">From Excel to Power BI</h5>
+              <p class="card-text">Data Analysis, Power BI, Business Analytics, Data Visualization, Microsoft Excel</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/85884d60eb75bdf7e552985870bacde9" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/learn/from-excel-to-power-bi" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 7 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Workday Basics Series">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Workday Basics Series</h5>
+              <p class="card-text">Configurable Security Frameworks, Business Process, Workday (Software), Workday Terminology, Workday Reporting.</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/c69d983764440524b4e47e6b37dad2be" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/learn/workday-basics-series" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 8 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Workday in Action Series">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Workday in Action Series</h5>
+              <p class="card-text">Business Process, Workday (Software), Business Processes, Workday Reporting, Workday Technology</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/5c8e19459a9bb460834dc7cd880f7dce" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/learn/workday-in-action-series" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+<!-- Certificate 9 -->
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+    <div class="card cert-card h-100 d-flex flex-column">
+      <div class="cert-img">
+        <img src="images/skills/certificate.png" class="card-img-top" alt="Human Resources Analytics">
+      </div>
+      <div class="card-body text-center d-flex flex-column">
+        <h5 class="card-title">Human Resources Analytics</h5>
+        <p class="card-text">
+          Storytelling, Human Resources Best Practices, Data Analysis, People Analysis, Leadership and Management, Business Analysis, Data Visualization, Human Resources, Influencing, Communication, People Development
+        </p>
+        <div class="mt-auto">
+          <a href="https://coursera.org/share/4c8fa967bab1a367d619695a1bbadd94" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+          <a href="https://www.coursera.org/learn/human-resources-analytics" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+        <!-- Certificate 10 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Data Governance">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">HRCI Human Resource Associate</h5>
+              <p class="card-text">Training development, Employee Relations, Recruitment, Compliance strategy, Performance Management</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/beb037c346c2e2245c266c36f5e4fbe6" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/professional-certificates/hrci-human-resource-associate" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 11 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Project Management">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Workforce Productivity</h5>
+              <p class="card-text">Lean Management, Six Sigma Techniques, Performance Metrics Development, Technology Utilization, Continuous Improvement Cultivation</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/11c3dab3a638ff583b113f23f9519112" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/learn/workforce-productivity" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 12 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="AI in Workforce Management">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">AI in Workforce Management</h5>
+              <p class="card-text">Resource Management, AI Integration, Decision-Making, Process Optimization, Strategic Planning</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/f2258c90351f1e1b1510eaa200770b5b" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/learn/ai-in-workforce-management" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Certificate 13 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card cert-card h-100 d-flex flex-column">
+            <div class="cert-img">
+              <img src="images/skills/certificate.png" class="card-img-top" alt="Data Ethics">
+            </div>
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title">Marketing Analytics</h5>
+              <p class="card-text">Marketing, Data Analysis, Brand Equity, Regression, Marketing Analytics, Regression Analysis, Business Analysis, Strategy, Marketing Experiments, Brand Management, Customer Lifetime Value</p>
+              <div class="mt-auto">
+                <a href="https://coursera.org/share/0a62f3505c20916dc7e5a73b38dfb8b2" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
+                <a href="https://www.coursera.org/learn/uva-darden-market-analytics" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+  </section>
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section">
+  <div class="container text-center">
+    
+    <!-- Replace H2 with your image -->
+    <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img">
+
+    <p class="contact-subtext">Have a question, a dashboard idea, or just want to say hi?</p>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="mailto:chrissy@dashboardsanddreams.com" method="POST" enctype="text/plain">
+          <div class="form-group mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="form-group mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="form-group mb-3">
+            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <p><i class="fas fa-envelope"></i> chrissy@dashboardsanddreams.com</p>
+      </div>
+      <div class="col-md-4">
+        <p><i class="fas fa-phone"></i> 1+(386)-801-7514</p>
+      </div>
+      <div class="col-md-4">
+        <a href="https://www.linkedin.com/in/chrissy-system-optimizer/" target="_blank">
+          <img src="images/skills/Linked In.png" alt="LinkedIn" class="social-icon"> LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="images/about/DBADD.png" alt="Christine Vargas Logo" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  </nav>
+
+   <!-- DASHBOARDS -->
+<section id="dashboards" class="bg-white py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Interactive Dashboards</h2>
+    
+    <div class="mb-5">
+      <h5>Netflix Global Trends Dashboard (Power BI)</h5>
+      <iframe title="Power BI Report" width="100%" height="500"
+              src="https://app.powerbi.com/view?r=eyJrIjoiZTc3ZWQ0OWUtMGIyMS00MTkzLTkyYWMtYzAxNzQ2NTkyZjg0IiwidCI6IjYzYjFiZmU0LWY2NDMtNDc5ZC04NzczLWM3N2I3OGM1ZWEyNiIsImMiOjN9"
+              frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+    
+    <div class='tableauPlaceholder' id='viz1746208068692' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;82&#47;827F7CX8R&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;827F7CX8R' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;82&#47;827F7CX8R&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1746208068692');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1400px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1400px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='2827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</section>
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+  
+  
