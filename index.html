@@ -287,22 +287,27 @@
 /* Contact Section Matching Navbar Style */
 .contact-section {
   position: relative;
-  background-image: url('images/about/tile4.png'); /* Same tile as navbar */
+  background-image: url('images/about/tile5.jpg');
   background-repeat: repeat;
   background-size: auto;
-  background-position: top;
-  color: #FCEFEA; /* Soft white for better contrast */
+  background-position: center;
+  color: #FCEFEA;
   padding: 80px 20px;
   z-index: 1;
+  overflow: hidden;
 }
 
-/* Optional: Overlay for readability */
 .contact-section::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(81, 57, 91, 0.6); /* Tint like the navbar */
+  background-color: rgba(3, 76, 82, 0.88); /* subtle green overlay */
   z-index: 0;
+}
+
+.contact-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Bring content above overlay */
