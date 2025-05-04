@@ -23,13 +23,13 @@
       z-index: -1;
     }
 
-    /* Navbar styles */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* or use flex-start if you want them close together */
-  padding: 10px 20px;
+  justify-content: flex-start; /* Push items to the left */
+  padding: 10px 40px; /* Adjust spacing */
   background-color: #034C52;
+  gap: 50px; /* Space between logo and links */
 }
 
 .navbar img {
@@ -38,7 +38,7 @@
 
 .navbar div {
   display: flex;
-  gap: 20px; /* spacing between links */
+  gap: 20px;
 }
 
 .navbar a {
@@ -50,8 +50,6 @@
 .navbar a:hover {
   text-decoration: underline;
 }
-
-
     .section {
       text-align: center;
       padding: 100px 20px 40px;
