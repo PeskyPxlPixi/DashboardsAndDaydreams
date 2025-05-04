@@ -295,75 +295,58 @@ body {
   background-size: auto;
   background-position: center;
   color: #FCEFEA;
-  padding: 80px 20px 60px 20px; /* Bottom padding to separate from footer */
+  padding: 80px 20px 60px 20px;
   margin: 0;
   z-index: 1;
   overflow: hidden;
-  border-top: 1px solid rgba(3, 76, 82, 0.88); /* Smooth transition from previous section */
-  padding-top: 40px; /* Optional: adjust for spacing */
+  border-top: 1px solid rgba(3, 76, 82, 0.88);
 }
 
+/* Fix card sizing and overlay */
 .contact-section .card {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   width: 100%;
   border-radius: 20px;
-  background-image: url('images/about/tile5.jpg');
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
   position: relative;
+  background: none; /* remove background image from card */
+  box-shadow: none;
   overflow: hidden;
-  box-shadow: none; /* Prevent shadow from creating a visual line */
 }
 
-/* Optional: Add semi-transparent overlay inside the card itself */
+/* Add overlay on top of tile inside card */
 .contact-section .card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(252, 219, 213, 0.9); /* Soft overlay for readability */
-  border-radius: 20px;
+  inset: 0;
+  background-color: rgba(252, 219, 213, 0.9); /* soft overlay color */
   z-index: 1;
+  border-radius: 20px;
 }
 
-.contact-section .container {
+/* Ensure form and content sits above overlay */
+.contact-section .card > * {
   position: relative;
-  z-index: 2; /* Place above section overlay */
+  z-index: 2;
 }
 
-.contact-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #F48D79;
+/* Add spacing between image and top of card */
+.contact-header-img {
+  max-width: 400px;
+  height: auto;
+  margin: 30px auto 10px auto; /* ← top margin increased */
+  display: block;
 }
 
 .contact-subtext {
   font-size: 1.1rem;
   margin-bottom: 30px;
-  color: #FCEFEA;
+  color: #034C52;
+  text-align: center;
 }
 
-.contact-header-img {
-  max-width: 400px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.contact-section a {
-  color: white !important;
-  text-decoration: none;
-}
-
-.contact-section a:hover {
-  text-decoration: underline;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 6px;
-  vertical-align: middle;
+.contact-section form {
+  padding: 0 20px 20px 20px;
 }
 
 
@@ -868,14 +851,18 @@ body {
 ============================= -->
 <section id="contact" class="contact-section">
   <div class="container d-flex justify-content-center">
-      <!-- Overlay -->
-      <div style="position: absolute; inset: 0; background-color: rgba(252, 219, 213, 0.9); border-radius: 20px; z-index: 1;"></div>
+    
+    <!-- Contact Card -->
+    <div class="card p-4 shadow-lg">
+      
+      <!-- Overlay (styled in CSS, not here!) -->
+      <!-- Do NOT add inline overlay here; handled via CSS `.card::before` -->
 
       <!-- Form Content -->
-      <div style="position: relative; z-index: 2;">
+      <div>
         <div class="text-center">
-          <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img mb-3" style="max-height: 60px;">
-          <p class="contact-subtext" style="color: #034C52;">Have a question, a dashboard idea, or just want to say hi?</p>
+          <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img mb-3">
+          <p class="contact-subtext">Have a question, a dashboard idea, or just want to say hi?</p>
         </div>
 
         <form action="mailto:chrissy@dashboardsanddaydreams.com" method="POST" enctype="text/plain">
@@ -893,9 +880,11 @@ body {
           </div>
         </form>
       </div>
+      
     </div>
   </div>
 </section>
+
 
 <!-- ============================
      FOOTER
