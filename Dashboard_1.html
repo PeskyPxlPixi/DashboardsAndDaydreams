@@ -110,6 +110,13 @@ body::before {
 .glass-card {
   background-color: rgba(3, 76, 82, 0.75);
   backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  color: #FCDBD5;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
   border-radius: 15px;
   padding: 30px;
   color: #FCDBD5;
@@ -247,17 +254,21 @@ body::before {
   </iframe>
 </div>
 
-  <!-- ============================
-       PROJECT OVERVIEW SECTION
-  ============================== -->
-  <section id="overview" class="section">
-  <!-- Personal Touch Image (outside glass-card to avoid shadow) -->
-  <div class="no-shadow-image-wrapper">
-    <img src="images/about/pixelme.png" 
-         alt="Pixel art of Christine working with cats">
-  </div>
-  
-      <h2 style="margin-bottom: 30px;">Project Overview: Netflix Dashboard</h2>
+<!-- ============================
+     PROJECT OVERVIEW SECTION
+============================== -->
+<section id="overview" class="section">
+  <div class="glass-card">
+
+    <!-- Personal Image Inside the Card -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <img src="images/about/pixelme.png" 
+           alt="Pixel art of Christine working with cats"
+           style="width: 300px; max-width: 100%; border-radius: 12px;">
+    </div>
+
+    <!-- Content -->
+    <h2 style="margin-bottom: 30px;">Project Overview: Netflix Dashboard</h2>
 
       <h3 style="color: #F9C3B8;">🎯 Questions I Wanted to Answer</h3>
       <ul>
@@ -282,8 +293,9 @@ body::before {
         <li><strong>Content spikes in Q4</strong>, suggesting alignment with holidays.</li>
         <li><strong>This project gave me full-cycle BI experience</strong> from cleaning to visualization.</li>
       </ul>
-    </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- ============================
        FOOTER
