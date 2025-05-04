@@ -29,11 +29,10 @@
     }
 
     .navbar-inner {
-      max-width: 1200px;
-      margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 50px;
     }
 
     .navbar img {
@@ -77,19 +76,20 @@
       line-height: 1.8;
     }
 
-    .dashboard-container {
+    .dashboard-preview {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
     }
 
-    .tableauPlaceholder {
+    iframe {
       width: 100%;
       max-width: 1400px;
       height: 827px;
       border-radius: 15px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      border: none;
     }
 
     .footer {
@@ -149,32 +149,35 @@
   <!-- Project Description -->
   <section id="overview" class="section">
     <div class="glass-card" style="padding: 40px 40px 50px; text-align: center;">
-      <img src="images/about/pixel.png" alt="Pixel art of Christine working with cats" style="width: 300px; max-width: 100%; height: auto; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+      <img src="images/about/pixel.png" 
+           alt="Pixel art of Christine working with cats" 
+           style="width: 300px; max-width: 100%; height: auto; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+  
       <h2 style="margin-bottom: 30px; font-size: 2rem;">Project Overview: Netflix Dashboard</h2>
 
       <h3 style="color: #F9C3B8; margin-bottom: 15px;">🎯 Questions I Wanted to Answer</h3>
       <ul>
-        <li><strong>Which countries have the most Netflix content?</strong></li>
-        <li><strong>How has content availability changed over time?</strong></li>
-        <li><strong>What are the dominant genres globally and by country?</strong></li>
-        <li><strong>Are there seasonal patterns in content releases?</strong></li>
+        <li><strong>Which countries have the most Netflix content?</strong> — to evaluate regional content investment.</li>
+        <li><strong>How has content availability changed over time?</strong> — to spot trends in content growth and diversity.</li>
+        <li><strong>What are the dominant genres globally and by country?</strong> — to understand audience demand and Netflix’s content strategy.</li>
+        <li><strong>Are there seasonal patterns in content releases?</strong> — to uncover strategic timing for user engagement.</li>
       </ul>
 
-      <h3 style="color: #F9C3B8; margin-bottom: 15px;">🛠 Steps I Took in Creating My Analysis</h3>
+      <h3 style="color: #F9C3B8; margin-bottom: 15px;">🛠 The Steps I Took in Creating My Analysis</h3>
       <ul>
-        <li><strong>Data Exploration & Cleaning</strong> — with Excel & Power Query</li>
-        <li><strong>Data Transformation</strong> — parsing and normalization</li>
-        <li><strong>DAX Measures & Calculations</strong> — for KPIs and trends</li>
-        <li><strong>Dashboard Development</strong> — visuals, slicers, filter panes</li>
-        <li><strong>Styling & UX</strong> — with consistent themes and layout</li>
+        <li><strong>Data Exploration & Cleaning:</strong> Used Excel and Power Query to inspect data types, remove nulls, split fields (e.g., country/genre), and handle duplicates.</li>
+        <li><strong>Data Transformation:</strong> Parsed multiple-value fields into normalized structures for easier filtering and grouping (e.g., country-by-title mapping).</li>
+        <li><strong>DAX Measures & Calculations:</strong> Built custom measures for year-based trends, content counts, and unique title distributions using Power BI DAX.</li>
+        <li><strong>Dashboard Development:</strong> Designed multiple report pages with slicers, KPI cards, line/column charts, and a dynamic filter pane for user interactivity.</li>
+        <li><strong>Styling & UX Optimization:</strong> Applied consistent theming, drop shadows, and font hierarchy to create a clean, inviting user experience.</li>
       </ul>
 
       <h3 style="color: #F9C3B8; margin-bottom: 15px;">📌 Key Takeaways</h3>
       <ul>
-        <li><strong>The U.S. has the largest catalog</strong></li>
-        <li><strong>Drama is globally dominant</strong>, with country variation</li>
-        <li><strong>Q4 release spikes</strong> match holiday engagement periods</li>
-        <li><strong>This project showcases end-to-end BI workflow</strong></li>
+        <li><strong>The U.S. has the largest catalog</strong> on Netflix, but countries like Canada, India, and the UK show increasing content growth.</li>
+        <li><strong>Drama is the dominant genre globally</strong>, while documentaries and international TV shows vary by region.</li>
+        <li><strong>Content spikes in Q4</strong>, suggesting Netflix aligns releases with holiday periods to maximize engagement.</li>
+        <li><strong>Building with Power BI gave me hands-on experience</strong> with end-to-end BI workflows—from data wrangling to insight delivery.</li>
       </ul>
     </div>
   </section>
