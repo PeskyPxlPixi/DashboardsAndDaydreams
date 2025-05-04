@@ -123,7 +123,7 @@ body::before {
 }
 
 /* ============================================================================
-   DASHBOARD EMBED CONTAINER (e.g. Tableau)
+   DASHBOARD EMBED CONTAINER (Responsive Tableau Embed)
 ============================================================================ */
 .dashboard-container {
   display: flex;
@@ -134,10 +134,20 @@ body::before {
 
 .tableauPlaceholder {
   width: 100%;
-  max-width: 1400px;
-  height: 827px;
+  max-width: 100%;
+  aspect-ratio: 4 / 3; /* Keeps a nice ratio across devices */
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.tableauPlaceholder object {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* ============================================================================
@@ -195,36 +205,49 @@ body::before {
     </div>
   </section>
 
-  <!-- ============================
-       TABLEAU DASHBOARD EMBED
-  ============================== -->
-  <div class="dashboard-container">
-    <div class='tableauPlaceholder' id='vizContainer'>
-      <noscript>
-        <a href='#'>
-          <img alt='Dashboard'
-            src='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1_rss.png'
-            style='border: none' />
-        </a>
-      </noscript>
-      <object class='tableauViz' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='site_root' value='' />
-        <param name='name' value='HRTableauProject_17459652307600/HRSummary' />
-        <param name='tabs' value='no' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image'
-          value='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='en-US' />
-      </object>
-    </div>
+<!-- ============================
+     TABLEAU DASHBOARD EMBED
+============================== -->
+<div class="dashboard-container">
+  <div class="tableauPlaceholder" id="vizContainer">
+    <noscript>
+      <a href="#">
+        <img alt="Dashboard"
+          src="https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1.png"
+          style="border: none;" />
+      </a>
+    </noscript>
+    <object class="tableauViz" style="width: 100%; height: 100%;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="HRTableauProject_17459652307600/HRSummary" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+    </object>
   </div>
+</div>
+
+<script type="text/javascript">
+  const container = document.getElementById('vizContainer');
+  const viz = container.getElementsByTagName('object')[0];
+
+  const width = container.offsetWidth;
+  viz.style.width = "100%";
+
+  if (width > 800) {
+    viz.style.height = "827px";
+  } else if (width > 500) {
+    viz.style.height = "600px";
+  } else {
+    viz.style.height = "460px";
+  }
+
+  const script = document.createElement('script');
+  script.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  viz.parentNode.insertBefore(script, viz);
+</script>
+
 
   <!-- ============================
        PROJECT OVERVIEW SECTION
@@ -280,29 +303,5 @@ body::before {
       <img src="images/skills/GetHub.png" alt="GitHub"> GitHub
     </a>
   </footer>
-
-  <!-- ============================
-       TABLEAU SCRIPT LOADER
-  ============================== -->
-  <script type='text/javascript'>
-    var divElement = document.getElementById('vizContainer');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    if (divElement.offsetWidth > 800) {
-      vizElement.style.width = '1400px';
-      vizElement.style.height = '827px';
-    } else if (divElement.offsetWidth > 500) {
-      vizElement.style.width = '1000px';
-      vizElement.style.height = '800px';
-    } else {
-      vizElement.style.width = '100%';
-      vizElement.style.height = '4727px';
-    }
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
-
-</body>
-
 </body>
 </html>
