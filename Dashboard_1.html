@@ -149,6 +149,50 @@ body::before {
 }
 
 /* ============================================================================
+   Project Overview image wrapper
+============================================================================ */
+.project-overview .image-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-overview img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+/* Headings inside overview */
+.project-overview h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  color: #FCEFEA;
+}
+
+.project-overview h3 {
+  color: #F9C3B8;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* List formatting */
+.project-overview ul {
+  padding-left: 20px;
+  margin-bottom: 25px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.project-overview li {
+  margin-bottom: 10px;
+}
+
+    
+
+/* ============================================================================
    FOOTER STYLES
 ============================================================================ */
 .footer {
@@ -258,23 +302,19 @@ body::before {
      PROJECT OVERVIEW SECTION
 ============================== -->
 <section id="overview" class="section">
-  <div class="glass-card">
+  <div class="glass-card project-overview">
 
-    <!-- Personal Image Inside the Card -->
-    <div style="text-align: center; margin-bottom: 30px;">
-      <img src="images/about/pixelme.png" 
-           alt="Pixel art of Christine working with cats"
-           style="width: 300px; max-width: 100%; border-radius: 12px;">
+    <!-- Personal Image -->
+    <div class="image-wrapper">
+      <img src="images/about/pixelme.png" alt="Christine working with cats">
     </div>
 
     <!-- Section Title -->
-    <h2 style="text-align: center; margin-bottom: 25px;">
-      Project Overview: Netflix Dashboard
-    </h2>
+    <h2>Project Overview: Netflix Dashboard</h2>
 
     <!-- Questions -->
-    <h3 style="color: #F9C3B8; margin-top: 20px;">🎯 Questions I Wanted to Answer</h3>
-    <ul style="margin-bottom: 25px;">
+    <h3>🎯 Questions I Wanted to Answer</h3>
+    <ul>
       <li><strong>Which countries have the most Netflix content?</strong> — to evaluate regional content investment.</li>
       <li><strong>How has content availability changed over time?</strong> — to spot trends in content growth and diversity.</li>
       <li><strong>What are the dominant genres globally and by country?</strong> — to understand audience demand and Netflix’s content strategy.</li>
@@ -282,16 +322,16 @@ body::before {
     </ul>
 
     <!-- Steps -->
-    <h3 style="color: #F9C3B8; margin-top: 20px;">🛠 The Steps I Took in Creating My Analysis</h3>
-    <ul style="margin-bottom: 25px;">
-      <li><strong>Data Exploration & Cleaning:</strong> Used Excel and Power Query to inspect data types, remove nulls, split fields (e.g., country/genre), and handle duplicates.</li>
-      <li><strong>Data Transformation:</strong> Parsed multi-value fields into normalized structures for better filtering and analysis.</li>
+    <h3>🛠 The Steps I Took in Creating My Analysis</h3>
+    <ul>
+      <li><strong>Data Exploration & Cleaning:</strong> Used Excel and Power Query to inspect data types, remove nulls, and split fields.</li>
+      <li><strong>Data Transformation:</strong> Parsed multi-value fields into normalized structures for filtering and analysis.</li>
       <li><strong>DAX Measures & Visuals:</strong> Created custom measures and visualizations in Power BI.</li>
-      <li><strong>Dashboard Design:</strong> Applied consistent styling, slicers, and clean layout for easy navigation.</li>
+      <li><strong>Dashboard Design:</strong> Applied consistent styling, slicers, and clean layout for navigation.</li>
     </ul>
 
     <!-- Key Takeaways -->
-    <h3 style="color: #F9C3B8; margin-top: 20px;">📌 Key Takeaways</h3>
+    <h3>📌 Key Takeaways</h3>
     <ul>
       <li><strong>The U.S. has the largest catalog</strong>, but international growth is accelerating.</li>
       <li><strong>Drama dominates globally</strong>, but regional preferences vary.</li>
@@ -301,6 +341,7 @@ body::before {
 
   </div>
 </section>
+
 
   <!-- ============================
        FOOTER
