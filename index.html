@@ -295,23 +295,41 @@ body {
   background-size: auto;
   background-position: center;
   color: #FCEFEA;
-  padding: 80px 20px 60px 20px; /* Add bottom padding to separate from footer */
-  margin: 0; /* Set margin top and bottom to 0 to prevent overlap/gaps */
+  padding: 80px 20px 60px 20px; /* Bottom padding to separate from footer */
+  margin: 0;
   z-index: 1;
   overflow: hidden;
+  border-top: 1px solid rgba(3, 76, 82, 0.88); /* Smooth transition from previous section */
+  padding-top: 40px; /* Optional: adjust for spacing */
 }
 
-.contact-section::before {
+.contact-section .card {
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 20px;
+  background-image: url('images/about/tile5.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none; /* Prevent shadow from creating a visual line */
+}
+
+/* Optional: Add semi-transparent overlay inside the card itself */
+.contact-section .card::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(3, 76, 82, 0.88); /* Teal overlay */
-  z-index: 0;
+  background-color: rgba(252, 219, 213, 0.9); /* Soft overlay for readability */
+  border-radius: 20px;
+  z-index: 1;
 }
 
 .contact-section .container {
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Place above section overlay */
 }
 
 .contact-section h2 {
@@ -347,6 +365,7 @@ body {
   margin-right: 6px;
   vertical-align: middle;
 }
+
 
 /* ============================================================================
    FOOTER
