@@ -37,15 +37,15 @@ body::before {
 }
 
 /* ============================================================================
-   NAVIGATION BAR
+   NAVIGATION BAR (Stacked: Logo on top, links centered below)
 ============================================================================ */
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* space between logo and links */
-  flex-wrap: wrap;
-  padding: 10px 20px;
+  flex-direction: column; /* Stack logo and links */
+  align-items: center;     /* Center horizontally */
+  padding: 20px;
   background-color: #034C52;
+  gap: 15px;
   z-index: 1000;
 }
 
@@ -59,6 +59,7 @@ body::before {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Nav links */
@@ -71,6 +72,7 @@ body::before {
 .navbar a:hover {
   text-decoration: underline;
 }
+
 
 /* ============================================================================
    RESPONSIVE ADJUSTMENTS
@@ -175,13 +177,14 @@ body::before {
        NAVIGATION BAR
   ============================== -->
   <header class="navbar">
-    <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
-    <div>
-      <a href="index.html">Return</a>
-      <a href="#overview">Project Overview</a>
-      <a href="#dashboard">Dashboard</a>
-    </div>
-  </header>
+  <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
+  <div class="nav-links">
+    <a href="index.html">Return</a>
+    <a href="#overview">Project Overview</a>
+    <a href="#dashboard">Dashboard</a>
+  </div>
+</header>
+
 
   <!-- ============================
        DASHBOARD INTRO SECTION
