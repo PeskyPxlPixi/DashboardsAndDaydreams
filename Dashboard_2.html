@@ -77,5 +77,146 @@
       margin: 0 auto 60px;
     }
 
-    .glass-card
+    .glass-card ul {
+      text-align: left;
+      padding-left: 25px;
+      line-height: 1.8;
+    }
 
+    .dashboard-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .tableauPlaceholder {
+      width: 100%;
+      max-width: 1400px;
+      height: 827px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .footer {
+      background-color: rgba(3, 76, 82, 0.75);
+      color: #FCEFEA;
+      text-align: center;
+      padding: 30px 10px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    .footer a {
+      color: #FCEFEA;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer img {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
+    <div>
+      <a href="index.html">Return</a>
+      <a href="#overview">Project Overview</a>
+      <a href="#dashboard">Dashboard</a>
+    </div>
+  </header>
+
+  <section id="dashboard" class="section">
+    <div class="glass-card">
+      <h2>HR Resource Dashboard</h2>
+      <p>An interactive Tableau dashboard exploring HR Analytics data trends involving hiring, gender, and education.</p>
+    </div>
+  </section>
+
+  <div class="dashboard-container">
+    <div class='tableauPlaceholder' id='vizContainer'>
+      <noscript>
+        <a href='#'><img alt='Dashboard' src='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1_rss.png' style='border: none' /></a>
+      </noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='HRTableauProject_17459652307600/HRSummary' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+  </div>
+
+  <section id="overview" class="section">
+    <div class="glass-card">
+      <img src="images/about/pixel.png" alt="Pixel art of Christine working with cats"
+           style="width: 300px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+      <h2>Project Overview: Human Resources Dashboard</h2>
+      <h3 style="color: #F9C3B8;">🎯 Key Questions Driving the Analysis</h3>
+      <ul>
+        <li><strong>How is employee distribution segmented by department and location?</strong></li>
+        <li><strong>What are the hiring and termination trends?</strong></li>
+        <li><strong>How do education levels and demographics correlate with job performance?</strong></li>
+        <li><strong>Are there patterns in income by gender, education, and role?</strong></li>
+      </ul>
+      <h3 style="color: #F9C3B8;">🛠 Methodology and Tools</h3>
+      <ul>
+        <li><strong>Data Preparation:</strong> Cleaned and shaped raw HR data using Excel and Power Query.</li>
+        <li><strong>Data Modeling:</strong> Structured employee records for analysis.</li>
+        <li><strong>Visual Analytics:</strong> Built in Tableau with interactive visuals and filters.</li>
+        <li><strong>UX Design:</strong> Applied consistent theming with teal and pink contrasts.</li>
+        <li><strong>Publishing:</strong> Hosted on Tableau Public for sharing.</li>
+      </ul>
+      <h3 style="color: #F9C3B8;">📌 Insights & Business Value</h3>
+      <ul>
+        <li>Ops, Sales, and CS have highest headcount and turnover.</li>
+        <li>Hiring exceeds termination, but spikes signal retention gaps.</li>
+        <li>Bachelor's and Master's level employees show high performance.</li>
+        <li>Salary trends upward with education and role level.</li>
+        <li>Gender differences raise considerations for equity audits.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    chrissy@dashboardsanddaydreams.com &nbsp; | &nbsp; +1(386)-801-7514
+    <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
+      <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn
+    </a>
+  </footer>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('vizContainer');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    if (divElement.offsetWidth > 800) {
+      vizElement.style.width = '1400px';
+      vizElement.style.height = '827px';
+    } else if (divElement.offsetWidth > 500) {
+      vizElement.style.width = '1000px';
+      vizElement.style.height = '800px';
+    } else {
+      vizElement.style.width = '100%';
+      vizElement.style.height = '4727px';
+    }
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+</body>
+</html>
