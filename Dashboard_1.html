@@ -5,23 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard | Dashboards and Daydreams</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: 'Open Sans', sans-serif;
       color: #FCEFEA;
       background-image: url('images/about/tile5.jpg');
       background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      position: relative;
+      z-index: 0;
     }
 
-    body::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(3px);
-  z-index: -1;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
 
     .navbar {
       background-color: #034C52;
@@ -57,6 +63,8 @@
     .section {
       text-align: center;
       padding: 100px 20px 40px;
+      position: relative;
+      z-index: 1;
     }
 
     .glass-card {
@@ -98,6 +106,8 @@
       text-align: center;
       padding: 30px 10px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+      position: relative;
+      z-index: 1;
     }
 
     .footer a {
@@ -117,6 +127,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -131,7 +142,7 @@
     </div>
   </header>
 
-  <!-- Project Title Section -->
+  <!-- Dashboard Section -->
   <section id="dashboard" class="section">
     <div class="glass-card">
       <h2>Netflix Dashboard Project</h2>
@@ -139,23 +150,24 @@
     </div>
   </section>
 
-  <!-- Power BI Dashboard -->
+  <!-- Power BI Embed -->
   <div class="dashboard-preview">
     <iframe title="Power BI Report"
       src="https://app.powerbi.com/view?r=eyJrIjoiZTc3ZWQ0OWUtMGIyMS00MTkzLTkyYWMtYzAxNzQ2NTkyZjg0IiwidCI6IjYzYjFiZmU0LWY2NDMtNDc5ZC04NzczLWM3N2I3OGM1ZWEyNiIsImMiOjN9"
-      allowfullscreen="true"></iframe>
+      allowfullscreen="true">
+    </iframe>
   </div>
 
-  <!-- Project Description -->
+  <!-- Project Overview -->
   <section id="overview" class="section">
-    <div class="glass-card" style="padding: 40px 40px 50px; text-align: center;">
+    <div class="glass-card">
       <img src="images/about/pixel.png" 
            alt="Pixel art of Christine working with cats" 
-           style="width: 300px; max-width: 100%; height: auto; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+           style="width: 300px; max-width: 100%; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
   
-      <h2 style="margin-bottom: 30px; font-size: 2rem;">Project Overview: Netflix Dashboard</h2>
+      <h2 style="margin-bottom: 30px;">Project Overview: Netflix Dashboard</h2>
 
-      <h3 style="color: #F9C3B8; margin-bottom: 15px;">🎯 Questions I Wanted to Answer</h3>
+      <h3 style="color: #F9C3B8;">🎯 Questions I Wanted to Answer</h3>
       <ul>
         <li><strong>Which countries have the most Netflix content?</strong> — to evaluate regional content investment.</li>
         <li><strong>How has content availability changed over time?</strong> — to spot trends in content growth and diversity.</li>
@@ -163,21 +175,20 @@
         <li><strong>Are there seasonal patterns in content releases?</strong> — to uncover strategic timing for user engagement.</li>
       </ul>
 
-      <h3 style="color: #F9C3B8; margin-bottom: 15px;">🛠 The Steps I Took in Creating My Analysis</h3>
+      <h3 style="color: #F9C3B8;">🛠 The Steps I Took in Creating My Analysis</h3>
       <ul>
         <li><strong>Data Exploration & Cleaning:</strong> Used Excel and Power Query to inspect data types, remove nulls, split fields (e.g., country/genre), and handle duplicates.</li>
-        <li><strong>Data Transformation:</strong> Parsed multiple-value fields into normalized structures for easier filtering and grouping (e.g., country-by-title mapping).</li>
-        <li><strong>DAX Measures & Calculations:</strong> Built custom measures for year-based trends, content counts, and unique title distributions using Power BI DAX.</li>
-        <li><strong>Dashboard Development:</strong> Designed multiple report pages with slicers, KPI cards, line/column charts, and a dynamic filter pane for user interactivity.</li>
-        <li><strong>Styling & UX Optimization:</strong> Applied consistent theming, drop shadows, and font hierarchy to create a clean, inviting user experience.</li>
+        <li><strong>Data Transformation:</strong> Parsed multi-value fields into normalized structures for better filtering and analysis.</li>
+        <li><strong>DAX Measures & Visuals:</strong> Created custom measures and visualizations in Power BI.</li>
+        <li><strong>Dashboard Design:</strong> Applied consistent styling, slicers, and clean layout for easy navigation.</li>
       </ul>
 
-      <h3 style="color: #F9C3B8; margin-bottom: 15px;">📌 Key Takeaways</h3>
+      <h3 style="color: #F9C3B8;">📌 Key Takeaways</h3>
       <ul>
-        <li><strong>The U.S. has the largest catalog</strong> on Netflix, but countries like Canada, India, and the UK show increasing content growth.</li>
-        <li><strong>Drama is the dominant genre globally</strong>, while documentaries and international TV shows vary by region.</li>
-        <li><strong>Content spikes in Q4</strong>, suggesting Netflix aligns releases with holiday periods to maximize engagement.</li>
-        <li><strong>Building with Power BI gave me hands-on experience</strong> with end-to-end BI workflows—from data wrangling to insight delivery.</li>
+        <li><strong>The U.S. has the largest catalog</strong>, but international growth is accelerating.</li>
+        <li><strong>Drama dominates globally</strong>, but regional preferences vary.</li>
+        <li><strong>Content spikes in Q4</strong>, suggesting alignment with holidays.</li>
+        <li><strong>This project gave me full-cycle BI experience</strong> from cleaning to visualization.</li>
       </ul>
     </div>
   </section>
