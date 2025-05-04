@@ -288,68 +288,8 @@ body {
 /* ============================================================================
    CONTACT SECTION
 ============================================================================ */
-.contact-section {
-  background-color: rgba(3, 76, 82, 0.85);
-  position: relative;
-  background-image: url('images/about/tile5.jpg');
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: center;
-  color: #FCEFEA;
-  padding: 80px 20px 60px 20px;
-  margin: 0;
-  z-index: 1;
-  overflow: hidden;
-  border-top: 1px solid rgba(3, 76, 82, 0.88);
-}
 
-/* Fix card sizing and overlay */
-.contact-section .card {
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
-  border-radius: 20px;
-  position: relative;
-  background: none; /* remove background image from card */
-  box-shadow: none;
-  overflow: hidden;
-}
-
-/* Add overlay on top of tile inside card */
-.contact-section .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(252, 219, 213, 0.9); /* Overlay color */
-  border-radius: 20px;
-  z-index: 1;
-}
-
-/* Ensure form and content sits above overlay */
-.contact-section .card > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Add spacing between image and top of card */
-.contact-header-img {
-  max-width: 400px;
-  height: auto;
-  margin: 30px auto 10px auto; /* ← top margin increased */
-  display: block;
-}
-
-.contact-subtext {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #034C52;
-  text-align: center;
-}
-
-.contact-section form {
-  padding: 0 20px 20px 20px;
-}
-
+   
 /* ============================================================================
    FOOTER
 ============================================================================ */
@@ -849,41 +789,6 @@ body {
 <!-- ============================
      CONTACT SECTION
 ============================= -->
-<section id="contact" class="contact-section">
-  <div class="container d-flex justify-content-center">
-    
-    <!-- Contact Card -->
-    <div class="card p-4 shadow-lg">
-      
-      <!-- Overlay (styled in CSS, not here!) -->
-      <!-- Do NOT add inline overlay here; handled via CSS `.card::before` -->
-
-      <!-- Form Content -->
-      <div>
-        <div class="text-center">
-          <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img mb-3">
-          <p class="contact-subtext">Have a question, a dashboard idea, or just want to say hi?</p>
-        </div>
-
-        <form action="mailto:chrissy@dashboardsanddaydreams.com" method="POST" enctype="text/plain">
-          <div class="form-group mb-3">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-          </div>
-          <div class="form-group mb-3">
-            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-          </div>
-          <div class="form-group mb-4">
-            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-</section>
 
 
 <!-- ============================
