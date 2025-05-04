@@ -192,6 +192,21 @@ body::before {
   border-radius: 15px;
 }
 
+/* ============================================================================
+       NO SHADOW IMAGE WRAPPER (Project Overview)
+    ============================================================================ */
+    .no-shadow-image-wrapper {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .no-shadow-image-wrapper img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: none;
+    }
+
   </style>
 </head>
 <body>
@@ -236,10 +251,11 @@ body::before {
        PROJECT OVERVIEW SECTION
   ============================== -->
   <section id="overview" class="section">
-    <div class="glass-card">
-      <img src="images/about/pixelme.png" 
-           alt="Pixel art of Christine working with cats" 
-           style="width: 300px; max-width: 100%; margin-bottom: 30px; border-radius: 12px;">
+  <!-- Personal Touch Image (outside glass-card to avoid shadow) -->
+  <div class="no-shadow-image-wrapper">
+    <img src="images/about/pixelme.png" 
+         alt="Pixel art of Christine working with cats">
+  </div>
   
       <h2 style="margin-bottom: 30px;">Project Overview: Netflix Dashboard</h2>
 
