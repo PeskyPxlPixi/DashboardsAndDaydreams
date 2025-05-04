@@ -3,153 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christine Vargas Portfolio</title>
+  <title>About Section</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-section {
+      background-color: #034C52;
+      padding: 60px 20px;
+      color: #FCDBD5;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #F48D79;
+    }
+
+    .about-text p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .about-header-img {
+      width: 250px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .btn-secondary {
+      background-color: #F48D79;
+      color: #034C52;
+      border: 1px solid #826E67;
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background-color: #034C52;
+      color: #FCDBD5;
+      border-color: #026773;
+    }
+
+    .btn-secondary:active,
+    .btn-secondary:focus,
+    .btn-secondary:focus-visible {
+      background-color: #C46E61;
+      border-color: #6A534D;
+      color: #FCDBD5;
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">
-        <img src="images/about/DBADD.png" alt="Christine Vargas Logo" height="40">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="about-container">
-      <div class="about-img text-center">
-        <img src="images/about/Profile pic.png" alt="Christine Vargas" class="img-fluid mb-3">
+<!-- About Me Section -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <div class="about-img text-center">
+      <img src="images/about/Profile pic.png" alt="Christine Vargas" class="img-fluid mb-3">
+      <div class="mt-3">
         <a href="documents/Christine_Vargas_Resume.pdf" class="btn btn-secondary" download>Download My Resume</a>
       </div>
-      <div class="about-text">
-        <img src="images/about/AB.png" alt="About Me" class="about-header-img">
-        <p>Hey there! I’m Christine Vargas — a data analyst who believes dashboards should not only inform, but inspire.</p>
-        <p>With a background in HR operations, project coordination, and business intelligence, I specialize in turning raw data into meaningful stories. Whether I’m analyzing Netflix trends or building people analytics dashboards in Power BI or Tableau, I’m all about making complex info simple, visual, and actionable.</p>
-        <p>I work with tools like Power BI, Tableau, SQL, Excel, and Workday, blending technical skill with a creative approach to design. My favorite projects? The ones where data actually solves a problem — or makes someone say, “Whoa, that’s cool.”</p>
-        <p>Outside of dashboards, you’ll usually find me gaming (RPGs and cozy sims are my jam), exploring new ways to streamline everything, or hanging out with my two mischievous Sphynx cats, Cleopatra and Vesper, who are basically my project managers.</p>
-        <p>Take a look around — and feel free to reach out if you want to chat dashboards, data, or your favorite gaming side quest!</p>
-      </div>
     </div>
-  </section>
-
-  <!-- Contact Me Section -->
-  <section id="contact" class="contact-section">
-    <div class="container text-center">
-      <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img">
-      <p class="contact-subtext">Have a question, a dashboard idea, or just want to say hi?</p>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-          <form action="mailto:chrissy@dashboardsanddaydreams.com" method="POST" enctype="text/plain">
-            <div class="form-group mb-3">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="form-group mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="form-group mb-3">
-              <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="row mt-5 text-center">
-        <div class="col-6 col-md-3 mb-3">
-          <p><i class="fas fa-envelope"></i> chrissy@dashboardsanddaydreams.com</p>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-          <p><i class="fas fa-phone"></i> 1+(386)-801-7514</p>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-          <a href="https://www.linkedin.com/in/chrissy-system-optimizer/" target="_blank">
-            <img src="images/skills/Linked In.png" alt="LinkedIn" class="social-icon"> LinkedIn
-          </a>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-          <a href="https://github.com/PeskyPxlPixi" target="_blank">
-            <img src="images/skills/github.png" alt="GitHub" class="social-icon"> GitHub
-          </a>
-        </div>
-      </div>
+    <div class="about-text">
+      <img src="images/about/AB.png" alt="About Me" class="about-header-img">
+      <p>Hey there! I’m Christine Vargas — a data analyst who believes dashboards should not only inform, but inspire.</p>
+      <p>With a background in HR operations, project coordination, and business intelligence, I specialize in turning raw data into meaningful stories. Whether I’m analyzing Netflix trends or building people analytics dashboards in Power BI or Tableau, I’m all about making complex info simple, visual, and actionable.</p>
+      <p>I work with tools like Power BI, Tableau, SQL, Excel, and Workday, blending technical skill with a creative approach to design. My favorite projects? The ones where data actually solves a problem — or makes someone say, “Whoa, that’s cool.”</p>
+      <p>Outside of dashboards, you’ll usually find me gaming (RPGs and cozy sims are my jam), exploring new ways to streamline everything, or hanging out with my two mischievous Sphynx cats, Cleopatra and Vesper, who are basically my project managers.</p>
+      <p>Take a look around — and feel free to reach out if you want to chat dashboards, data, or your favorite gaming side quest!</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-  <!-- Contact Me Section -->
-  <section id="contact" class="contact-section">
-    <div class="container text-center">
-      <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img">
-      <p class="contact-subtext">Have a question, a dashboard idea, or just want to say hi?</p>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-          <form action="mailto:chrissy@dashboardsanddaydreams.com" method="POST" enctype="text/plain">
-            <div class="form-group mb-3">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="form-group mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="form-group mb-3">
-              <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="row mt-5 text-center">
-        <div class="col-6 col-md-3 mb-3">
-          <p><i class="fas fa-envelope"></i> chrissy@dashboardsanddaydreams.com</p>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-          <p><i class="fas fa-phone"></i> 1+(386)-801-7514</p>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-          <a href="https://www.linkedin.com/in/chrissy-system-optimizer/" target="_blank">
-            <img src="images/skills/Linked In.png" alt="LinkedIn" class="social-icon"> LinkedIn
-          </a>
-        </div>
-        <div class="col-6 col-md-3 mb-3">
-          <a href="https://github.com/PeskyPxlPixi" target="_blank">
-            <img src="images/skills/github.png" alt="GitHub" class="social-icon"> GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
-
-  
