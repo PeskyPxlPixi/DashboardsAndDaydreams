@@ -230,10 +230,10 @@ body {
    CERTIFICATES SECTION
 ============================================================================ */
 .certificates-section {
-  background-color: rgba(3, 76, 82, 0.85); /* Semi-transparent teal */
+  background-color: rgba(3, 76, 82, 0.85);
   color: #FCDBD5;
-  padding: 60px 20px; /* Use consistent padding */
-  margin: 0; /* Remove bottom margin if needed */
+  padding: 60px 20px 0 20px; /* Remove bottom padding */
+  margin-bottom: 0; /* Remove bottom margin */
 }
 
 .certificates-section .container {
@@ -295,45 +295,52 @@ body {
   background-size: auto;
   background-position: center;
   color: #FCEFEA;
-  padding: 80px 20px;
+  padding: 80px 20px 60px 20px; /* Add bottom padding to separate from footer */
+  margin: 0; /* Set margin top and bottom to 0 to prevent overlap/gaps */
   z-index: 1;
   overflow: hidden;
-
-  margin-top: 0; /* <-- Add this line here */
 }
+
 .contact-section::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(3, 76, 82, 0.88);
+  background-color: rgba(3, 76, 82, 0.88); /* Teal overlay */
   z-index: 0;
 }
+
 .contact-section .container {
   position: relative;
   z-index: 1;
 }
+
 .contact-section h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
   color: #F48D79;
 }
+
 .contact-subtext {
   font-size: 1.1rem;
   margin-bottom: 30px;
   color: #FCEFEA;
 }
+
 .contact-header-img {
   max-width: 400px;
   height: auto;
   margin-bottom: 10px;
 }
+
 .contact-section a {
   color: white !important;
   text-decoration: none;
 }
+
 .contact-section a:hover {
   text-decoration: underline;
 }
+
 .social-icon {
   width: 24px;
   height: 24px;
@@ -842,7 +849,6 @@ body {
 ============================= -->
 <section id="contact" class="contact-section">
   <div class="container d-flex justify-content-center">
-    <div class="card p-4 shadow-lg" style="max-width: 700px; width: 100%; border-radius: 20px; background-image: url('images/about/tile5.jpg'); background-size: cover; background-repeat: repeat;">
       <!-- Overlay -->
       <div style="position: absolute; inset: 0; background-color: rgba(252, 219, 213, 0.9); border-radius: 20px; z-index: 1;"></div>
 
