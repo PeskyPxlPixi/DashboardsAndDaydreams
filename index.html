@@ -232,8 +232,8 @@ body {
 .certificates-section {
   background-color: rgba(3, 76, 82, 0.85);
   color: #FCDBD5;
-  padding: 60px 20px 0 20px; /* Remove bottom padding */
-  margin-bottom: 0; /* Remove bottom margin */
+  padding: 60px 20px 20px 20px; /* Reduce bottom padding */
+  margin-bottom: 0; /* Eliminate extra gap */
 }
 
 .certificates-section .container {
@@ -285,6 +285,25 @@ body {
   justify-content: space-between;
 }
 
+/* ============================================================================
+   PERSONAL IMAGE (ABOVE CONTACT CARD)
+============================================================================ */
+.personal-img-wrapper {
+  background-color: rgba(252, 219, 213, 0.9); /* Soft peach tone */
+  padding: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px; /* Space between image and contact card */
+}
+
+.personal-img-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+   
 /* ============================================================================
    CONTACT SECTION
 ============================================================================ */
@@ -850,9 +869,11 @@ body {
   <div class="container d-flex flex-column align-items-center">
 
     <!-- Personal Image (You + Cats) -->
-    <div class="mb-4">
-      <img src="images/about/pixelme.png" alt="Christine and cats" class="personal-img">
-    </div>
+    <div class="text-center mb-4">
+  <div class="personal-img-wrapper">
+    <img src="images/about/you-and-cats.png" alt="Christine and cats">
+  </div>
+</div>
 
     <!-- Contact Card -->
     <div class="card contact-card p-4 shadow-lg">
