@@ -2,138 +2,193 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard | Dashboards and Daydreams</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Dashboard | Dashboards and Daydreams</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      color: #FCEFEA;
-      background-image: url('images/about/tile5.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      position: relative;
-      z-index: 0;
-    }
+/* ============================================================================
+   GLOBAL BASE STYLES
+============================================================================ */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #FCEFEA;
+  background-image: url('images/about/tile5.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
 
-    .navbar {
-      background-color: #034C52;
-      padding: 10px 40px;
-    }
+/* ============================================================================
+   BACKGROUND OVERLAY EFFECT
+============================================================================ */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
 
-    .navbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 50px;
-    }
+/* ============================================================================
+   NAVIGATION BAR (Stacked: Logo on top, links centered below)
+============================================================================ */
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack logo and links */
+  align-items: center;     /* Center horizontally */
+  padding: 20px;
+  background-color: #034C52;
+  gap: 15px;
+  z-index: 1000;
+}
 
-    .navbar img {
-      height: 50px;
-    }
+.navbar img {
+  height: 50px;
+  max-width: 100%;
+  height: auto;
+}
 
-    .navbar-links {
-      display: flex;
-      gap: 30px;
-    }
+.navbar div {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .navbar a {
-      color: #FCDBD5;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* Nav links */
+.navbar a {
+  color: #FCDBD5;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+.navbar a:hover {
+  text-decoration: underline;
+}
 
-    .section {
-      text-align: center;
-      padding: 100px 20px 40px;
-      position: relative;
-      z-index: 1;
-    }
 
-    .glass-card {
-      background-color: rgba(3, 76, 82, 0.75);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      padding: 30px;
-      color: #FCDBD5;
-      max-width: 800px;
-      margin: 0 auto 5px;
-    }
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+============================================================================ */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
 
-    .glass-card ul {
-      text-align: left;
-      padding-left: 25px;
-      line-height: 1.8;
-    }
+  .navbar img {
+    height: 40px; /* Smaller logo on mobile */
+    margin-bottom: 10px;
+  }
 
-    .dashboard-preview {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+  .navbar div {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 
-    iframe {
-      width: 100%;
-      max-width: 1400px;
-      height: 827px;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      border: none;
-    }
+/* ============================================================================
+   SECTION BASE STYLES
+============================================================================ */
+.section {
+  padding: 100px 20px 40px;
+  text-align: center;
+}
 
-    .footer {
-      background-color: rgba(3, 76, 82, 0.75);
-      color: #FCEFEA;
-      text-align: center;
-      padding: 30px 10px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-      position: relative;
-      z-index: 1;
-    }
+/* ============================================================================
+   GLASS CARD STYLE (Used for overlays or content blocks)
+============================================================================ */
+.glass-card {
+  background-color: rgba(3, 76, 82, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  color: #FCDBD5;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
 
-    .footer a {
-      color: #FCEFEA;
-      text-decoration: none;
-      margin-left: 10px;
-    }
+.glass-card ul {
+  text-align: left;
+  padding-left: 25px;
+  line-height: 1.8;
+}
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
+/* ============================================================================
+   DASHBOARD EMBED CONTAINER (e.g. Tableau)
+============================================================================ */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-    .footer img {
-      width: 20px;
-      vertical-align: middle;
-      margin-right: 5px;
-    }
+.tableauPlaceholder {
+  width: 100%;
+  max-width: 1400px;
+  height: 827px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================================
+   FOOTER STYLES
+============================================================================ */
+.footer {
+  background-color: rgba(3, 76, 82, 0.75);
+  color: #FCEFEA;
+  text-align: center;
+  padding: 30px 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.footer a {
+  color: #FCEFEA;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer img {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
   </style>
 </head>
-
 <body>
 
-  <!-- Navbar -->
+  <!-- ============================
+       NAVIGATION BAR
+  ============================== -->
   <header class="navbar">
-    <div class="navbar-inner">
-      <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
-      <div class="navbar-links">
-        <a href="index.html">Return</a>
-        <a href="#overview">Project Overview</a>
-        <a href="#dashboard">Dashboard</a>
-      </div>
-    </div>
-  </header>
+  <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
+  <div class="nav-links">
+    <a href="index.html">Return</a>
+    <a href="#overview">Project Overview</a>
+    <a href="#dashboard">Dashboard</a>
+  </div>
+</header>
 
-  <!-- Dashboard Section -->
+
+  <!-- ============================
+       DASHBOARD INTRO SECTION
+    ============================== -->
   <section id="dashboard" class="section">
     <div class="glass-card">
       <h2>Netflix Dashboard Project</h2>
@@ -141,7 +196,9 @@
     </div>
   </section>
 
-  <!-- Power BI Embed -->
+<!-- ============================
+       TABLEAU DASHBOARD EMBED
+  ============================== -->
   <div class="dashboard-preview">
     <iframe title="Power BI Report"
       src="https://app.powerbi.com/view?r=eyJrIjoiZTc3ZWQ0OWUtMGIyMS00MTkzLTkyYWMtYzAxNzQ2NTkyZjg0IiwidCI6IjYzYjFiZmU0LWY2NDMtNDc5ZC04NzczLWM3N2I3OGM1ZWEyNiIsImMiOjN9"
@@ -149,7 +206,9 @@
     </iframe>
   </div>
 
-  <!-- Project Overview -->
+  <!-- ============================
+       PROJECT OVERVIEW SECTION
+  ============================== -->
   <section id="overview" class="section">
     <div class="glass-card">
       <img src="images/about/pixelme.png" 
@@ -184,15 +243,17 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ============================
+       FOOTER
+  ============================== -->
   <footer class="footer">
     chrissy@dashboardsanddaydreams.com | +1(386)-801-7514 |
     <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
-      <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn | 
+      <img src="images/skills/Linked In.png" alt="LinkedIn"> LinkedIn
+    </a> |
     <a href="https://github.com/PeskyPxlPixi" target="_blank">
-      <img src="images/skills/GetHub.png" alt="LinkedIn">Github
+      <img src="images/skills/GetHub.png" alt="GitHub"> GitHub
     </a>
   </footer>
-
 </body>
 </html>
