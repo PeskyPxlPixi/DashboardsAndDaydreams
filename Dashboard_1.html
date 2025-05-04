@@ -169,6 +169,30 @@ body::before {
   margin-right: 5px;
 }
 
+/* ============================================================================
+   POWER BI DASHBOARD EMBED (Responsive)
+============================================================================ */
+.powerbi-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  margin: 40px auto;
+}
+
+.powerbi-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
   </style>
 </head>
 <body>
@@ -197,14 +221,16 @@ body::before {
   </section>
 
 <!-- ============================
-       TABLEAU DASHBOARD EMBED
-  ============================== -->
-  <div class="dashboard-preview">
-    <iframe title="Power BI Report"
-      src="https://app.powerbi.com/view?r=eyJrIjoiZTc3ZWQ0OWUtMGIyMS00MTkzLTkyYWMtYzAxNzQ2NTkyZjg0IiwidCI6IjYzYjFiZmU0LWY2NDMtNDc5ZC04NzczLWM3N2I3OGM1ZWEyNiIsImMiOjN9"
-      allowfullscreen="true">
-    </iframe>
-  </div>
+     POWER BI DASHBOARD EMBED
+============================== -->
+<div class="powerbi-container">
+  <iframe 
+    title="Power BI Report"
+    src="https://app.powerbi.com/view?r=eyJrIjoiZTc3ZWQ0OWUtMGIyMS00MTkzLTkyYWMtYzAxNzQ2NTkyZjg0IiwidCI6IjYzYjFiZmU0LWY2NDMtNDc5ZC04NzczLWM3N2I3OGM1ZWEyNiIsImMiOjN9"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
 
   <!-- ============================
        PROJECT OVERVIEW SECTION
