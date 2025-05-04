@@ -42,22 +42,26 @@ body::before {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 10px 40px;
+  justify-content: space-between; /* space between logo and links */
+  flex-wrap: wrap;
+  padding: 10px 20px;
   background-color: #034C52;
-  gap: 50px;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .navbar img {
   height: 50px;
+  max-width: 100%;
+  height: auto;
 }
 
 .navbar div {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
+/* Nav links */
 .navbar a {
   color: #FCDBD5;
   text-decoration: none;
@@ -66,6 +70,28 @@ body::before {
 
 .navbar a:hover {
   text-decoration: underline;
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+============================================================================ */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .navbar img {
+    height: 40px; /* Smaller logo on mobile */
+    margin-bottom: 10px;
+  }
+
+  .navbar div {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /* ============================================================================
@@ -144,6 +170,10 @@ body::before {
   </style>
 </head>
 <body>
+
+  <!-- ============================
+       NAVIGATION BAR
+  ============================== -->
   <header class="navbar">
     <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
     <div>
@@ -153,17 +183,29 @@ body::before {
     </div>
   </header>
 
+  <!-- ============================
+       DASHBOARD INTRO SECTION
+  ============================== -->
   <section id="dashboard" class="section">
     <div class="glass-card">
       <h2>HR Resource Dashboard</h2>
-      <p>An interactive Tableau dashboard exploring HR Analytics data trends involving hiring, gender, and education.</p>
+      <p>
+        An interactive Tableau dashboard exploring HR Analytics data trends involving hiring, gender, and education.
+      </p>
     </div>
   </section>
 
+  <!-- ============================
+       TABLEAU DASHBOARD EMBED
+  ============================== -->
   <div class="dashboard-container">
     <div class='tableauPlaceholder' id='vizContainer'>
       <noscript>
-        <a href='#'><img alt='Dashboard' src='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1_rss.png' style='border: none' /></a>
+        <a href='#'>
+          <img alt='Dashboard'
+            src='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1_rss.png'
+            style='border: none' />
+        </a>
       </noscript>
       <object class='tableauViz' style='display:none;'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
@@ -172,7 +214,8 @@ body::before {
         <param name='name' value='HRTableauProject_17459652307600/HRSummary' />
         <param name='tabs' value='no' />
         <param name='toolbar' value='yes' />
-        <param name='static_image' value='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1.png' />
+        <param name='static_image'
+          value='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1.png' />
         <param name='animate_transition' value='yes' />
         <param name='display_static_image' value='yes' />
         <param name='display_spinner' value='yes' />
@@ -183,11 +226,18 @@ body::before {
     </div>
   </div>
 
+  <!-- ============================
+       PROJECT OVERVIEW SECTION
+  ============================== -->
   <section id="overview" class="section">
     <div class="glass-card">
+      <!-- Personal Touch Image -->
       <img src="images/about/pixelme.png" alt="Pixel art of Christine working with cats"
-           style="width: 300px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+        style="width: 300px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+
       <h2>Project Overview: Human Resources Dashboard</h2>
+
+      <!-- Key Questions -->
       <h3 style="color: #F9C3B8;">🎯 Key Questions Driving the Analysis</h3>
       <ul>
         <li><strong>How is employee distribution segmented by department and location?</strong></li>
@@ -195,6 +245,8 @@ body::before {
         <li><strong>How do education levels and demographics correlate with job performance?</strong></li>
         <li><strong>Are there patterns in income by gender, education, and role?</strong></li>
       </ul>
+
+      <!-- Tools & Methods -->
       <h3 style="color: #F9C3B8;">🛠 Methodology and Tools</h3>
       <ul>
         <li><strong>Data Preparation:</strong> Cleaned and shaped raw HR data using Excel and Power Query.</li>
@@ -203,6 +255,8 @@ body::before {
         <li><strong>UX Design:</strong> Applied consistent theming with teal and pink contrasts.</li>
         <li><strong>Publishing:</strong> Hosted on Tableau Public for sharing.</li>
       </ul>
+
+      <!-- Insights -->
       <h3 style="color: #F9C3B8;">📌 Insights & Business Value</h3>
       <ul>
         <li>Ops, Sales, and CS have highest headcount and turnover.</li>
@@ -214,16 +268,22 @@ body::before {
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ============================
+       FOOTER
+  ============================== -->
   <footer class="footer">
     chrissy@dashboardsanddaydreams.com | +1(386)-801-7514 |
     <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
-      <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn | 
+      <img src="images/skills/Linked In.png" alt="LinkedIn"> LinkedIn
+    </a> |
     <a href="https://github.com/PeskyPxlPixi" target="_blank">
-      <img src="images/skills/GetHub.png" alt="LinkedIn">Github
+      <img src="images/skills/GetHub.png" alt="GitHub"> GitHub
     </a>
   </footer>
 
+  <!-- ============================
+       TABLEAU SCRIPT LOADER
+  ============================== -->
   <script type='text/javascript'>
     var divElement = document.getElementById('vizContainer');
     var vizElement = divElement.getElementsByTagName('object')[0];
@@ -241,5 +301,8 @@ body::before {
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
   </script>
+
+</body>
+
 </body>
 </html>
