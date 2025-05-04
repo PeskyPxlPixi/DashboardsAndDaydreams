@@ -168,6 +168,21 @@ body::before {
   margin-right: 5px;
 }
 
+/* ============================================================================
+       NO SHADOW IMAGE WRAPPER (Project Overview)
+    ============================================================================ */
+    .no-shadow-image-wrapper {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .no-shadow-image-wrapper img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: none;
+    }
+
   </style>
 </head>
 <body>
@@ -248,47 +263,52 @@ body::before {
 </script>
 
 
-  <!-- ============================
-       PROJECT OVERVIEW SECTION
-  ============================== -->
-  <section id="overview" class="section">
-    <div class="glass-card">
-      <!-- Personal Touch Image -->
-      <img src="images/about/pixelme.png" alt="Pixel art of Christine working with cats"
-        style="width: 300px; margin-bottom: 30px; border-radius: 12px;">
+ <!-- ============================
+     PROJECT OVERVIEW SECTION
+============================= -->
+<section id="overview" class="section">
 
-      <h2>Project Overview: Human Resources Dashboard</h2>
+  <!-- Personal Touch Image (outside glass-card to avoid shadow) -->
+  <div class="no-shadow-image-wrapper">
+    <img src="images/about/pixelme.png" 
+         alt="Pixel art of Christine working with cats">
+  </div>
 
-      <!-- Key Questions -->
-      <h3 style="color: #F9C3B8;">🎯 Key Questions Driving the Analysis</h3>
-      <ul>
-        <li><strong>How is employee distribution segmented by department and location?</strong></li>
-        <li><strong>What are the hiring and termination trends?</strong></li>
-        <li><strong>How do education levels and demographics correlate with job performance?</strong></li>
-        <li><strong>Are there patterns in income by gender, education, and role?</strong></li>
-      </ul>
+  <!-- Main Content Card -->
+  <div class="glass-card">
+    <h2>Project Overview: Human Resources Dashboard</h2>
 
-      <!-- Tools & Methods -->
-      <h3 style="color: #F9C3B8;">🛠 Methodology and Tools</h3>
-      <ul>
-        <li><strong>Data Preparation:</strong> Cleaned and shaped raw HR data using Excel and Power Query.</li>
-        <li><strong>Data Modeling:</strong> Structured employee records for analysis.</li>
-        <li><strong>Visual Analytics:</strong> Built in Tableau with interactive visuals and filters.</li>
-        <li><strong>UX Design:</strong> Applied consistent theming with teal and pink contrasts.</li>
-        <li><strong>Publishing:</strong> Hosted on Tableau Public for sharing.</li>
-      </ul>
+    <!-- Key Questions -->
+    <h3 style="color: #F9C3B8;">🎯 Key Questions Driving the Analysis</h3>
+    <ul>
+      <li><strong>How is employee distribution segmented by department and location?</strong></li>
+      <li><strong>What are the hiring and termination trends?</strong></li>
+      <li><strong>How do education levels and demographics correlate with job performance?</strong></li>
+      <li><strong>Are there patterns in income by gender, education, and role?</strong></li>
+    </ul>
 
-      <!-- Insights -->
-      <h3 style="color: #F9C3B8;">📌 Insights & Business Value</h3>
-      <ul>
-        <li>Ops, Sales, and CS have highest headcount and turnover.</li>
-        <li>Hiring exceeds termination, but spikes signal retention gaps.</li>
-        <li>Bachelor's and Master's level employees show high performance.</li>
-        <li>Salary trends upward with education and role level.</li>
-        <li>Gender differences raise considerations for equity audits.</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Tools & Methods -->
+    <h3 style="color: #F9C3B8;">🛠 Methodology and Tools</h3>
+    <ul>
+      <li><strong>Data Preparation:</strong> Cleaned and shaped raw HR data using Excel and Power Query.</li>
+      <li><strong>Data Modeling:</strong> Structured employee records for analysis.</li>
+      <li><strong>Visual Analytics:</strong> Built in Tableau with interactive visuals and filters.</li>
+      <li><strong>UX Design:</strong> Applied consistent theming with teal and pink contrasts.</li>
+      <li><strong>Publishing:</strong> Hosted on Tableau Public for sharing.</li>
+    </ul>
+
+    <!-- Insights -->
+    <h3 style="color: #F9C3B8;">📌 Insights & Business Value</h3>
+    <ul>
+      <li>Ops, Sales, and CS have highest headcount and turnover.</li>
+      <li>Hiring exceeds termination, but spikes signal retention gaps.</li>
+      <li>Bachelor's and Master's level employees show high performance.</li>
+      <li>Salary trends upward with education and role level.</li>
+      <li>Gender differences raise considerations for equity audits.</li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- ============================
        FOOTER
