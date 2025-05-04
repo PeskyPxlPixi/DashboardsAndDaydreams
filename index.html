@@ -8,248 +8,47 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
-.about-section {
-  background-color: #034C52;
-  padding: 60px 20px;
-  color: #FCDBD5;
+
+/* ============================================================================
+   GLOBAL STYLES
+============================================================================ */
+body {
+  background-image: url('images/about/tile5.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
 }
 
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.about-img img {
-  width: 450px;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.about-text {
-  max-width: 600px;
-}
-
-.about-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #F48D79;
-}
-
-.about-text p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.about-header-img {
-  width: 250px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.about-text h2 {
-  margin-bottom: 1px; /* Reduce this value */
-}
-
-
-/* Updated CSS for Projects Section */
-.projects-section {
-  background-color: #034C52 !important; /* Emerald Green */
-  padding: 50px 0;
-}
-
-.projects-section h2 {
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: #F48D79; /* Make heading visible on dark background */
-}
-
-.card {
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  background-color: #FCDBD5; /* Light card on dark section */
-  border: none;
-}
-
-.card-img-top {
-  max-height: 180px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 15px;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  color: #8b4263; /* Match the section’s theme */
-}
-
-.card-text {
-  margin-bottom: 15px;
-  color: #51395b; /* Dark readable text */
-}
-
-/* Button Customization */
-/* Primary Button */
-.btn-primary {
-  background-color: #034C52;
-  border-color: #026773;
-  color: #FCDBD5;
-  box-shadow: none; /* remove Bootstrap's default focus glow */
-}
-
-.btn-primary:hover {
-  background-color: #F48D79;
-  border-color: #826E67;
-  color: #034C52;
-}
-
-.btn-primary:active,
-.btn-primary:focus,
-.btn-primary:focus-visible {
-  background-color: #022F33;
-  border-color: #014144;
-  color: #FCDBD5;
-  outline: none;
-  box-shadow: none;
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background-color: #F48D79;
-  color: #034C52;
-  border: 1px solid #826E67;
-  box-shadow: none;
-}
-
-.btn-secondary:hover {
-  background-color: #034C52;
-  color: #FCDBD5;
-  border-color: #026773;
-}
-
-.btn-secondary:active,
-.btn-secondary:focus,
-.btn-secondary:focus-visible {
-  background-color: #C46E61;
-  border-color: #6A534D;
-  color: #FCDBD5;
-  outline: none;
-  box-shadow: none;
-}
-
+/* ============================================================================
+   TYPOGRAPHY & FORM ELEMENTS
+============================================================================ */
 :focus-visible {
-  outline: 2px dashed #F48D79; /* subtle, accessible alternative */
+  outline: 2px dashed #F48D79;
   outline-offset: 2px;
 }
 
-/* Skills Section Styling */
-.skills-section {
-  background-color: #034C52;
-  color: #FCDBD5;
-}
-
-.skill-card {
+.form-control {
+  border-radius: 5px;
   border: none;
-  background-color: #FCDBD5;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
 }
 
-/* Card Top Area with Logo */
-.skill-img {
-  background-color: #686762;
-  padding: 1rem;
-  text-align: center;
-}
-
-.skill-img img {
-  max-height: 100px;
-  object-fit: contain;
-}
-
-/* Centered content for smaller cards */
-.card-body {
-  text-align: center;
-}
-
-.card-title {
-  color: #034C52;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.card-text {
-  color: #51395B;
-}
-
-/* Remove links (just in case any remain) */
-.skills-section .btn {
-  display: none;
-}
-
-/* === Certificates Section Styling === */
-.certificates-section {
-  background-color: #034C52;
-  color: #FCDBD5;
-}
-
-.cert-card {
-  background-color: #FCDBD5;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Certificate Image Band */
-.cert-img {
-  background-color: #5C6460;
-  text-align: center;
-  padding: 1rem;
-}
-
-.cert-img img {
-  max-height: 100px;
-  object-fit: contain;
-}
-
-/* Certificate Text */
-.cert-card .card-title {
-  color: #034C52;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.cert-card .card-text {
-  color: #5C6460;
-  font-size: 0.9rem;
-}
-
-/* Buttons (matching project styles) */
+/* ============================================================================
+   BUTTON STYLES
+============================================================================ */
 .btn-primary {
   background-color: #034C52;
   border-color: #026773;
   color: #FCDBD5;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: none;
 }
-
 .btn-primary:hover {
   background-color: #F48D79;
   border-color: #826E67;
   color: #034C52;
   transform: scale(1.05);
 }
-
 .btn-primary:active,
 .btn-primary:focus {
   background-color: #022F33;
@@ -265,14 +64,12 @@
   border: 1px solid #826E67;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .btn-secondary:hover {
   background-color: #034C52;
   color: #FCDBD5;
   border-color: #026773;
   transform: scale(1.05);
 }
-
 .btn-secondary:active,
 .btn-secondary:focus {
   background-color: #C46E61;
@@ -282,9 +79,191 @@
   box-shadow: none;
 }
 
+/* ============================================================================
+   NAVBAR
+============================================================================ */
+.navbar.custom-navbar {
+  background-image: url('images/about/tile5.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+.navbar.custom-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(81, 57, 91, 0.5);
+  z-index: 0;
+}
+.navbar.custom-navbar .container,
+.navbar.custom-navbar .navbar-nav,
+.navbar.custom-navbar .navbar-brand {
+  position: relative;
+  z-index: 1;
+}
+.navbar.custom-navbar .nav-link {
+  color: #034C52;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.navbar.custom-navbar .nav-link:hover,
+.navbar.custom-navbar .nav-link:focus {
+  color: #FFD8C2;
+  text-decoration: underline;
+}
+.navbar.custom-navbar .nav-item.active .nav-link {
+  color: #ffffff;
+  font-weight: bold;
+}
 
+/* ============================================================================
+   ABOUT SECTION
+============================================================================ */
+.about-section {
+  background-color: #034C52;
+  padding: 60px 20px;
+  color: #FCDBD5;
+  padding-top: 100px;
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about-img img {
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.about-text {
+  max-width: 600px;
+}
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1px;
+  color: #F48D79;
+}
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.about-header-img {
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-/* Contact Section Matching Navbar Style */
+/* ============================================================================
+   PROJECTS SECTION
+============================================================================ */
+.projects-section {
+  background-color: #034C52 !important;
+  padding: 50px 0;
+}
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #F48D79;
+}
+.card {
+  background-color: #FCDBD5;
+  border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.card-img-top {
+  max-height: 180px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+.card-title {
+  font-size: 1.25rem;
+  color: #8b4263;
+}
+.card-text {
+  color: #51395b;
+  margin-bottom: 15px;
+}
+
+/* ============================================================================
+   SKILLS SECTION
+============================================================================ */
+.skills-section {
+  background-color: #034C52;
+  color: #FCDBD5;
+}
+.skill-card {
+  border: none;
+  background-color: #FCDBD5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.skill-img {
+  background-color: #686762;
+  padding: 1rem;
+  text-align: center;
+}
+.skill-img img {
+  max-height: 100px;
+  object-fit: contain;
+}
+.skills-section .btn {
+  display: none;
+}
+
+/* ============================================================================
+   CERTIFICATES SECTION
+============================================================================ */
+.certificates-section {
+  background-color: #034C52;
+  color: #FCDBD5;
+}
+.cert-card {
+  background-color: #FCDBD5;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+.cert-img {
+  background-color: #5C6460;
+  text-align: center;
+  padding: 1rem;
+}
+.cert-img img {
+  max-height: 100px;
+  object-fit: contain;
+}
+.cert-card .card-title {
+  color: #034C52;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.cert-card .card-text {
+  color: #5C6460;
+  font-size: 0.9rem;
+}
+
+/* ============================================================================
+   CONTACT SECTION
+============================================================================ */
 .contact-section {
   position: relative;
   background-image: url('images/about/tile5.jpg');
@@ -296,83 +275,38 @@
   z-index: 1;
   overflow: hidden;
 }
-
 .contact-section::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(3, 76, 82, 0.88); /* subtle green overlay */
+  background-color: rgba(3, 76, 82, 0.88);
   z-index: 0;
 }
-
 .contact-section .container {
   position: relative;
   z-index: 1;
 }
-
-/* Bring content above overlay */
-.contact-section .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Social Icons */
-.social-icon {
-  height: 30px;
-  width: 30px;
-  margin-bottom: 8px;
-}
-
-.contact-section {
-  position: relative;
-  background-image: url('images/about/tile5.jpg');
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: center;
-  color: #FCEFEA;
-  padding: 80px 20px;
-  z-index: 1;
-}
-
 .contact-section h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
   color: #F48D79;
 }
-
 .contact-subtext {
   font-size: 1.1rem;
   margin-bottom: 30px;
   color: #FCEFEA;
 }
-
-.form-control {
-  border-radius: 5px;
-  border: none;
-  padding: 15px;
+.contact-header-img {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 10px;
 }
-
-.btn-primary {
-  background-color: #034C52;
-  border-color: #026773;
-  color: #FCDBD5;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.contact-section a {
+  color: white !important;
+  text-decoration: none;
 }
-
-.btn-primary:hover {
-  background-color: #F48D79;
-  border-color: #826E67;
-  color: #034C52;
-  transform: scale(1.05);
-}
-
-.btn-primary:active,
-.btn-primary:focus {
-  background-color: #022F33;
-  border-color: #014144;
-  color: #FCDBD5;
-  outline: none;
-  box-shadow: none;
+.contact-section a:hover {
+  text-decoration: underline;
 }
 .social-icon {
   width: 24px;
@@ -381,99 +315,27 @@
   vertical-align: middle;
 }
 
-.contact-header-img {
-  max-width: 400px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.contact-section a {
-  color: white !important;
-  text-decoration: none;
-}
-
-.contact-section a:hover {
-  text-decoration: underline;
-}
-
-/* Navbar with Local Tiled Background */
-.navbar.custom-navbar {
-  background-image: url('images/about/tile5.jpg'); /* Local tile image path */
-  background-repeat: repeat; /* Seamless tiling */
-  background-size: auto; /* Use natural image size */
-  background-position: top;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1030; /* Ensure it's above all other content */
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Optional: Overlay for better readability */
-.navbar.custom-navbar::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(81, 57, 91, 0.5); /* #51395B with 50% opacity */
-  z-index: 0;
-}
-
-/* Ensure navbar content appears above overlay */
-.navbar.custom-navbar .container,
-.navbar.custom-navbar .navbar-nav,
-.navbar.custom-navbar .navbar-brand {
-  position: relative;
-  z-index: 1;
-}
-
-/* Style for normal nav links */
-.navbar.custom-navbar .nav-link {
-  color: #034C52; /* soft coral tone matching your branding */
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-/* Style for hover effect */
-.navbar.custom-navbar .nav-link:hover,
-.navbar.custom-navbar .nav-link:focus {
-  color: #FFD8C2; /* warm peach highlight */
-  text-decoration: underline;
-}
-
-/* Style for active/current page link */
-.navbar.custom-navbar .nav-item.active .nav-link {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.about-section,
-#about {
-  padding-top: 100px; /* Increased from 120px to add more vertical space */
-}
-
+/* ============================================================================
+   FOOTER
+============================================================================ */
 .footer {
   background-color: #034C52;
   color: #FCEFEA;
   font-size: 0.95rem;
 }
-
 .footer a {
   color: #F48D79;
   margin: 0 5px;
 }
-
 .footer a:hover {
   text-decoration: underline;
 }
-
 .footer img.social-icon {
   height: 20px;
   width: 20px;
   vertical-align: middle;
   margin-right: 5px;
 }
-
 
 </style>
 
