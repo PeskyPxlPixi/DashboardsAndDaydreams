@@ -338,7 +338,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(3, 76, 82, 0.85); /* Teal overlay */
+  background-color: rgba(3, 76, 82, 0.85);
   z-index: 0;
 }
 
@@ -347,67 +347,79 @@ body {
   z-index: 2;
 }
 
-/* Card styling */
 .contact-card {
   background-color: rgba(252, 219, 213, 0.9);
   border-radius: 20px;
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
-  padding: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 40px;
   margin: 0 auto;
-}
-
-/* Image at the top of the card */
-.contact-header-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px auto;
-}
-
-/* Subtext under the title */
-.contact-subtext {
-  color: #034C52;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-/* Personal image styling */
 .personal-img-wrapper {
-  max-width: 200px;
-  margin: 0 auto 30px;
+  max-width: 180px;
+  margin: 0 auto 20px;
 }
 
 .personal-img-wrapper img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 
-/* Responsive tweaks */
-@media (max-width: 576px) {
-  .contact-header-img {
-    max-width: 280px;
+.contact-header-img {
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.contact-subtext {
+  color: #034C52;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.contact-card form {
+  text-align: left;
+}
+
+.contact-card .form-control {
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 12px;
+}
+
+.contact-card .btn-primary {
+  background-color: #034C52;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 30px 20px;
   }
 
-  .contact-card {
-    padding: 20px;
+  .contact-header-img {
+    max-width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .personal-img-wrapper {
+    max-width: 150px;
+    margin-bottom: 20px;
   }
 
   .contact-subtext {
     font-size: 1rem;
   }
-
-  .personal-img-wrapper {
-    max-width: 160px;
-    margin-bottom: 20px;
-  }
 }
-
    
 /* ============================================================================
    FOOTER
