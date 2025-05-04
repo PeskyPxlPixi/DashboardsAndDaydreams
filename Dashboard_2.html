@@ -1,233 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Netflix Dashboard | Dashboards and Daydreams</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-   body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  color: #FCEFEA;
-  background-image: url('images/about/tile5.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
-
-/* Glass overlay */
-body::after {
-  content: "";
-  position: absolute; /* changed from fixed */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(3px);
-  z-index: -1;
-}
-
-/* Navbar - scrolls with page */
-.navbar {
-  position: relative; /* ensures it moves with the page */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 10px 40px;
-  background-color: #034C52;
-  gap: 50px;
-  z-index: 10; /* ensures it sits above overlay */
-}
-
-.navbar img {
-  height: 50px;
-}
-
-.navbar div {
-  display: flex;
-  gap: 20px;
-}
-
-.navbar a {
-  color: #FCDBD5;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-/* Page section padding */
-.section {
-  text-align: center;
-  padding: 100px 20px 40px;
-}
-
-/* Glass card style */
-.glass-card {
-  background-color: rgba(3, 76, 82, 0.75);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  color: #FCDBD5;
-  max-width: 800px;
-  margin: 0 auto 5px;
-}
-
-.glass-card ul {
-  text-align: left;
-  padding-left: 25px;
-  line-height: 1.8;
-}
-
-/* Dashboard container */
-.dashboard-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Tableau or iframe placeholder */
-.tableauPlaceholder {
-  width: 100%;
-  max-width: 1400px;
-  height: 827px;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Footer */
-.footer {
-  background-color: rgba(3, 76, 82, 0.75);
-  color: #FCEFEA;
-  text-align: center;
-  padding: 30px 10px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-.footer a {
-  color: #FCEFEA;
-  text-decoration: none;
-  margin-left: 10px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.footer img {
-  width: 20px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-  </style>
-</head>
-<body>
-  <header class="navbar">
-    <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
-    <div>
-      <a href="index.html">Return</a>
-      <a href="#overview">Project Overview</a>
-      <a href="#dashboard">Dashboard</a>
-    </div>
-  </header>
-
-  <section class="section">
-    <section id="dashboard" class="section">
-    <div class="glass-card">
-      <h2>HR Resource Dashboard</h2>
-      <p>An interactive Tableau dashboard exploring HR Analystics data trends involving hiring, gender, and education.</p>
-    </div>
-  </section>
-
-  <div class="dashboard-container">
-    <div class='tableauPlaceholder' id='vizContainer'>
-      <noscript>
-        <a href='#'><img alt='Dashboard' src='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1_rss.png' style='border: none' /></a>
-      </noscript>
-      <object class='tableauViz' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='site_root' value='' />
-        <param name='name' value='HRTableauProject_17459652307600/HRSummary' />
-        <param name='tabs' value='no' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image' value='https://public.tableau.com/static/images/HR/HRTableauProject_17459652307600/HRSummary/1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='en-US' />
-      </object>
-    </div>
-  </div>
-
-  <section id="overview" class="section">
-    <div class="glass-card">
-      <img src="images/about/pixel.png" 
-           alt="Pixel art of Christine working with cats" 
-           style="width: 300px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
-      
-      <h2>Project Overview: Human Resources Dashboard</h2>
-  
-      <h3 style="color: #F9C3B8;">🎯 Key Questions Driving the Analysis</h3>
-      <ul>
-        <li><strong>How is employee distribution segmented by department and location?</strong> — to support resource planning and organizational restructuring.</li>
-        <li><strong>What are the hiring and termination trends?</strong> — to evaluate workforce stability and turnover.</li>
-        <li><strong>How do education levels and demographics correlate with job performance?</strong> — to identify training needs and areas for talent development.</li>
-        <li><strong>Are there patterns in income by gender, education, and role?</strong> — to explore equity and guide compensation strategies.</li>
-      </ul>
-  
-      <h3 style="color: #F9C3B8;">🛠 Methodology and Tools</h3>
-      <ul>
-        <li><strong>Data Preparation:</strong> Cleaned and shaped raw HR data using Excel and Power Query, ensuring field consistency and eliminating nulls or duplicates.</li>
-        <li><strong>Data Modeling:</strong> Structured employee records for analysis by demographics, department, job level, location, and hire/termination dates.</li>
-        <li><strong>Visual Analytics:</strong> Built an interactive Tableau dashboard featuring bar charts, line graphs, KPIs, pie charts, and dot matrices for performance and demographic cross-analysis.</li>
-        <li><strong>User Experience Design:</strong> Applied a dark theme with teal and pink accents for clear data contrast and visual hierarchy. Integrated filters for role, gender, hire date, and location.</li>
-        <li><strong>Dashboard Publishing:</strong> Deployed on Tableau Public with export/share options enabled for portfolio visibility and stakeholder sharing.</li>
-      </ul>
-  
-      <h3 style="color: #F9C3B8;">📌 Insights & Business Value</h3>
-      <ul>
-        <li><strong>Operations, Sales, and Customer Service</strong> departments account for the largest employee volumes and highest turnover.</li>
-        <li><strong>Hiring consistently outpaces termination</strong>, but spikes in attrition suggest key moments to analyze exit reasons and engagement.</li>
-        <li><strong>Employees with bachelor’s and master’s degrees</strong> perform strongly, especially those in age groups 35–44 and 45–54.</li>
-        <li><strong>Salary increases with education level and role</strong>, with managers and analysts earning the highest within their categories.</li>
-        <li><strong>Gender-based salary differences</strong> and role concentrations raise considerations for HR equity audits and policy refinement.</li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="footer">
-    chrissy@dashboardsandaydreams.com &nbsp; | &nbsp; +1(386)-801-7514
-    <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
-      <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn
-    </a>
-  </footer>
-
-  <script type='text/javascript'>
-    var divElement = document.getElementById('vizContainer');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    if (divElement.offsetWidth > 800) {
-      vizElement.style.width = '1400px';
-      vizElement.style.height = '827px';
-    } else if (divElement.offsetWidth > 500) {
-      vizElement.style.width = '1000px';
-      vizElement.style.height = '800px';
-    } else {
-      vizElement.style.width = '100%';
-      vizElement.style.height = '4727px';
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #FCEFEA;
+      background-image: url('images/about/tile5.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      position: relative;
     }
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
-</body>
-</html>
+
+    /* Blur overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+
+    /* Navbar that scrolls with the page */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px 40px;
+      background-color: #034C52;
+      gap: 50px;
+      z-index: 1;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .navbar div {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      color: #FCDBD5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      padding: 100px 20px 40px;
+      text-align: center;
+    }
+
+    .glass-card {
+      background-color: rgba(3, 76, 82, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      color: #FCDBD5;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .glass-card
+
