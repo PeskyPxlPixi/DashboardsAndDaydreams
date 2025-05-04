@@ -285,12 +285,16 @@ body {
   justify-content: space-between;
 }
 
+.certificates-section .row:last-child {
+  margin-bottom: 0;
+}
+   
 /* ============================================================================
    PERSONAL IMAGE (YOU + CATS)
 ============================================================================ */
 .personal-img-wrapper {
   max-width: 200px;         /* Limits the image width */
-  margin: 0 auto 30px;      /* Center and add bottom spacing */
+  margin: 10px auto 30px;   /* <--- updated top margin (was likely 60px or more) */
   padding: 10px;
   background-color: rgba(252, 219, 213, 0.9);
   border-radius: 20px;
