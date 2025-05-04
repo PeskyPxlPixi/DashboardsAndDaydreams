@@ -6,31 +6,39 @@
   <title>Netflix Dashboard | Dashboards and Daydreams</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      color: #FCEFEA;
-      background-image: url('images/about/tile5.jpg');
-      background-size: cover;
-    }
+   body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #FCEFEA;
+  background-image: url('images/about/tile5.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
 
-    body::after {
+/* Glass overlay */
+body::after {
   content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  position: absolute; /* changed from fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
   z-index: -1;
 }
 
-
+/* Navbar - scrolls with page */
 .navbar {
+  position: relative; /* ensures it moves with the page */
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Push items to the left */
-  padding: 10px 40px; /* Adjust spacing */
+  justify-content: flex-start;
+  padding: 10px 40px;
   background-color: #034C52;
-  gap: 50px; /* Space between logo and links */
+  gap: 50px;
+  z-index: 10; /* ensures it sits above overlay */
 }
 
 .navbar img {
@@ -51,67 +59,72 @@
 .navbar a:hover {
   text-decoration: underline;
 }
-    .section {
-      text-align: center;
-      padding: 100px 20px 40px;
-    }
 
-    .glass-card {
-      background-color: rgba(3, 76, 82, 0.75);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      padding: 30px;
-      color: #FCDBD5;
-      max-width: 800px;
-      margin: 0 auto 5px;
-    }
+/* Page section padding */
+.section {
+  text-align: center;
+  padding: 100px 20px 40px;
+}
 
-    .glass-card ul {
-      text-align: left;
-      padding-left: 25px;
-      line-height: 1.8;
-    }
+/* Glass card style */
+.glass-card {
+  background-color: rgba(3, 76, 82, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  color: #FCDBD5;
+  max-width: 800px;
+  margin: 0 auto 5px;
+}
 
-    .dashboard-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+.glass-card ul {
+  text-align: left;
+  padding-left: 25px;
+  line-height: 1.8;
+}
 
-    .tableauPlaceholder {
-      width: 100%;
-      max-width: 1400px;
-      height: 827px;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
+/* Dashboard container */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
- 
-    .footer {
-      background-color: rgba(3, 76, 82, 0.75);
-      color: #FCEFEA;
-      text-align: center;
-      padding: 30px 10px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-    }
+/* Tableau or iframe placeholder */
+.tableauPlaceholder {
+  width: 100%;
+  max-width: 1400px;
+  height: 827px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
 
-    .footer a {
-      color: #FCEFEA;
-      text-decoration: none;
-      margin-left: 10px;
-    }
+/* Footer */
+.footer {
+  background-color: rgba(3, 76, 82, 0.75);
+  color: #FCEFEA;
+  text-align: center;
+  padding: 30px 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
+.footer a {
+  color: #FCEFEA;
+  text-decoration: none;
+  margin-left: 10px;
+}
 
-    .footer img {
-      width: 20px;
-      vertical-align: middle;
-      margin-right: 5px;
-    }
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer img {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
 
   </style>
 </head>
