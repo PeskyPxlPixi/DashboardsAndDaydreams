@@ -83,40 +83,41 @@ body {
    NAVBAR
 ============================================================================ */
 .navbar.custom-navbar {
-  background-image: url('images/about/tile5.jpg');
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: top;
+  background-color: transparent !important;  /* Remove background image */
+  background-image: none !important;         /* Override tile5 image */
+  box-shadow: none;
+  border-bottom: none;                       /* Optional: remove bottom line */
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1030;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Remove overlay if it was used */
 .navbar.custom-navbar::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(81, 57, 91, 0.5);
-  z-index: 0;
+  display: none;
 }
+
 .navbar.custom-navbar .container,
 .navbar.custom-navbar .navbar-nav,
 .navbar.custom-navbar .navbar-brand {
   position: relative;
   z-index: 1;
 }
+
 .navbar.custom-navbar .nav-link {
   color: #034C52;
   font-weight: 600;
   transition: color 0.3s ease;
 }
+
 .navbar.custom-navbar .nav-link:hover,
 .navbar.custom-navbar .nav-link:focus {
   color: #FFD8C2;
   text-decoration: underline;
 }
+
 .navbar.custom-navbar .nav-item.active .nav-link {
   color: #ffffff;
   font-weight: bold;
