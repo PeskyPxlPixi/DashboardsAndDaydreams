@@ -275,16 +275,20 @@ body::before {
 </header>
 
 
-  <!-- ============================
-       DASHBOARD INTRO SECTION
-    ============================== -->
-  <section id="dashboard" class="section">
-    <div class="glass-card">
-      <h2>Netflix Dashboard Project</h2>
-      <p>An interactive Power BI dashboard exploring global Netflix data trends.</p>
-      <p>📊 Heads up, mobile explorers! While these dashboards technically work on your phone, they really prefer the spacious, luxurious real estate of a full browser. Think of it like trying to watch "Lord of the Rings" on a smartwatch — possible, but... why? 😅 For the full interactive magic, hop onto a desktop or laptop!</p>
-    </div>
-  </section>
+<!-- ============================
+     DASHBOARD INTRO SECTION
+============================== -->
+<section id="dashboard" class="section">
+  <div class="glass-card">
+    <h2>Netflix Data Dashboard</h2>
+    <p>An interactive Power BI dashboard analyzing global Netflix titles by genre, release year, country, and rating to uncover content trends and viewer patterns.</p>
+    
+    <p><strong>Tools & Skills Used:</strong> Data Analysis, SQL, Excel, Power Query, DAX, Power BI, Data Visualization, Entertainment Analytics</p>
+    
+    <p><strong>📊 Heads up, mobile explorers!</strong> These dashboards are technically phone-friendly, but they really shine on a bigger screen. Trying to explore Netflix insights on your phone is like binge-watching "Stranger Things" on a calculator—possible, but not ideal. 😅 For best results, use a desktop or laptop!</p>
+  </div>
+</section>
+
 
 <!-- ============================
      POWER BI DASHBOARD EMBED
@@ -302,45 +306,54 @@ body::before {
      PROJECT OVERVIEW SECTION
 ============================== -->
 <section id="overview" class="section">
-  <div class="glass-card project-overview">
+  <div class="glass-card">
 
-    <!-- Personal Image -->
-    <div class="image-wrapper">
-      <img src="images/about/pixelme.png" alt="Christine working with cats">
+    <!-- Personal Image Inside the Card -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <img src="images/about/pixelme.png" 
+           alt="Pixel art of Christine working with cats"
+           style="width: 300px; max-width: 100%; border-radius: 12px;">
     </div>
 
-    <!-- Section Title -->
-    <h2>Project Overview: Netflix Dashboard</h2>
+    <!-- Content -->
+    <h2>Project Overview: Netflix Data Dashboard</h2>
 
-    <!-- Questions -->
-    <h3>🎯 Questions I Wanted to Answer</h3>
+    <!-- Case Study Framing -->
+    <h3 style="color: #F9C3B8;">📂 Business Problem & Strategy</h3>
+    <p>Streaming platforms like Netflix offer a massive library of content, but it's often challenging to understand patterns in genre popularity, international availability, and viewer targeting over time. This project explores those questions through a simulated dataset modeled after global Netflix titles.</p>
+    <p>To tackle this, I created a Power BI dashboard that analyzes key trends in release years, countries, genres, and ratings. The goal was to surface insights that would help content teams, marketers, or media analysts understand how Netflix's offerings evolve—and how those patterns might impact future strategy.</p>
+
+    <!-- Key Questions -->
+    <h3 style="color: #F9C3B8;">🎯 Key Questions Driving the Analysis</h3>
     <ul>
-      <li><strong>Which countries have the most Netflix content?</strong> — to evaluate regional content investment.</li>
-      <li><strong>How has content availability changed over time?</strong> — to spot trends in content growth and diversity.</li>
-      <li><strong>What are the dominant genres globally and by country?</strong> — to understand audience demand and Netflix’s content strategy.</li>
-      <li><strong>Are there seasonal patterns in content releases?</strong> — to uncover strategic timing for user engagement.</li>
+      <li><strong>What genres dominate Netflix’s content library, and how have they evolved over time?</strong></li>
+      <li><strong>Which countries contribute the most content to the platform?</strong></li>
+      <li><strong>Are there trends in how content is rated (TV-MA, PG, etc.) across different years?</strong></li>
+      <li><strong>How does Netflix's catalog balance international versus domestic content?</strong></li>
     </ul>
 
-    <!-- Steps -->
-    <h3>🛠 The Steps I Took in Creating My Analysis</h3>
+    <!-- Tools & Methods -->
+    <h3 style="color: #F9C3B8;">🛠 Methodology and Tools</h3>
     <ul>
-      <li><strong>Data Exploration & Cleaning:</strong> Used Excel and Power Query to inspect data types, remove nulls, and split fields.</li>
-      <li><strong>Data Transformation:</strong> Parsed multi-value fields into normalized structures for filtering and analysis.</li>
-      <li><strong>DAX Measures & Visuals:</strong> Created custom measures and visualizations in Power BI.</li>
-      <li><strong>Dashboard Design:</strong> Applied consistent styling, slicers, and clean layout for navigation.</li>
+      <li><strong>Data Preparation:</strong> Cleaned and structured a simulated Netflix dataset using Excel and Power Query, ensuring consistent formats for genres, dates, and countries.</li>
+      <li><strong>Data Modeling:</strong> Designed relationships between genres, countries, and release years to enable cross-filtering and trend exploration.</li>
+      <li><strong>Visual Analytics:</strong> Built in Power BI with interactive visuals, filters, and calculated measures using DAX.</li>
+      <li><strong>UX Design:</strong> Focused on intuitive layout and color balance to highlight global trends and viewer-relevant data points.</li>
+      <li><strong>Publishing:</strong> Published on Power BI Public to enable interactive web access.</li>
     </ul>
 
-    <!-- Key Takeaways -->
-    <h3>📌 Key Takeaways</h3>
+    <!-- Insights -->
+    <h3 style="color: #F9C3B8;">📌 Insights & Business Value</h3>
     <ul>
-      <li><strong>The U.S. has the largest catalog</strong>, but international growth is accelerating.</li>
-      <li><strong>Drama dominates globally</strong>, but regional preferences vary.</li>
-      <li><strong>Content spikes in Q4</strong>, suggesting alignment with holidays.</li>
-      <li><strong>This project gave me full-cycle BI experience</strong> from cleaning to visualization.</li>
+      <li><strong>Genre Trends:</strong> Dramas and international films are consistently dominant, with documentaries and reality shows growing steadily in recent years.</li>
+      <li><strong>Country Contributions:</strong> The U.S. and India produce the most content, but global diversity in Netflix's library has expanded significantly since 2017.</li>
+      <li><strong>Ratings Breakdown:</strong> TV-MA remains the most common content rating, especially in recent years, reflecting a mature target audience.</li>
+      <li><strong>Strategic Use:</strong> These insights could help content teams decide where to expand regional programming or balance genre offerings by market.</li>
     </ul>
 
   </div>
 </section>
+
 
 
   <!-- ============================
