@@ -83,51 +83,48 @@
 /* ============================================================================
    NAVBAR
 ============================================================================ */
-    .navbar.custom-navbar {
-      background-color: rgba(81, 57, 91, 0.5);
-      backdrop-filter: blur(8px);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1030;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
+.navbar.custom-navbar {
+  background-color: rgba(81, 57, 91, 0.5);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 
-    .navbar.custom-navbar .nav-link {
-      color: #f48d79;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
+.navbar.custom-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .navbar.custom-navbar .nav-link:hover,
-    .navbar.custom-navbar .nav-link:focus {
-      color: #FFD8C2;
-      text-decoration: underline;
-    }
+.navbar.custom-navbar .navbar-brand img:first-child {
+  height: 50px;
+  width: auto;
+}
 
-    .navbar.custom-navbar .nav-item.active .nav-link {
-      color: #ffffff;
-      font-weight: bold;
-    }
+.navbar.custom-navbar .navbar-brand img:last-child {
+  height: 40px;
+  width: auto;
+}
 
-    .navbar .navbar-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+.navbar.custom-navbar .nav-link {
+  color: #f48d79;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.navbar.custom-navbar .nav-link:hover,
+.navbar.custom-navbar .nav-link:focus {
+  color: #FFD8C2;
+  text-decoration: underline;
+}
 
-    .navbar .navbar-brand img:first-child {
-      height: 60px;
-      width: auto;
-      margin-right: 8px;
-    }
-
-    .navbar .navbar-brand img:last-child {
-      height: 40px;
-      width: auto;
-    }
-
+.navbar.custom-navbar .nav-item.active .nav-link {
+  color: #ffffff;
+  font-weight: bold;
+}
 
 /* ============================================================================
    RESPONSIVE LOGO
@@ -150,11 +147,12 @@
    ABOUT SECTION
 ============================================================================ */
 .about-section {
-  background-color: rgba(3, 76, 82, 0.85); /* Teal with slight opacity */
-  padding: 140px 20px 60px; /* Clears fixed navbar and adds breathing room */
+  background-color: rgba(3, 76, 82, 0.85);
+  padding: 180px 20px 60px; /* Fixes navbar overlap */
   color: #FCDBD5;
   position: relative;
   z-index: 1;
+  min-height: 100vh;
 }
 
 .about-container {
@@ -170,7 +168,6 @@
 /* PROFILE IMAGE + BUTTON */
 .about-img {
   text-align: center;
-  position: relative;
   z-index: 2;
 }
 .about-img img {
@@ -180,10 +177,10 @@
   object-fit: cover;
 }
 .about-img .mt-2 {
-  margin-top: 8px; /* Closer to image */
+  margin-top: 10px;
 }
 
-/* DOWNLOAD BUTTON */
+/* BUTTON */
 .btn-secondary {
   background-color: #F48D79;
   color: #034C52;
@@ -235,6 +232,28 @@
   width: auto;
 }
 
+/* ============================================================================
+   RESPONSIVE TWEAKS
+============================================================================ */
+@media (max-width: 768px) {
+  .about-img img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-sunflower-left,
+  .about-sunflower-right {
+    max-height: 40px;
+  }
+}
 /* ============================================================================
    RESPONSIVE ADJUSTMENTS
 ============================================================================ */
@@ -1297,12 +1316,10 @@
 ============================= -->
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
   <div class="container">
-    
-     <a class="navbar-brand d-flex align-items-center" href="#home">
-  <img src="images/about/CVLOGO.png" alt="Christine Vargas Logo" height="48" style="margin-right: 12px;">
-  <img src="images/about/DBADD.png" alt="Dashboards and Daydreams Title" height="40">
-</a>
-
+    <a class="navbar-brand d-flex align-items-center" href="#home">
+      <img src="images/about/CVLOGO.png" alt="Christine Vargas Logo">
+      <img src="images/about/DBADD.png" alt="Dashboards and Daydreams Title">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -1316,7 +1333,7 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav>v>
 
 <!-- Bootstrap JS and dependencies (jQuery and Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
