@@ -187,22 +187,30 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  gap: 15px;
   position: relative;
 }
 
-.about-sunflower {
-  max-height: 80px;
-  margin-right: 15px;
+.about-sunflower-left,
+.about-sunflower-right {
+  max-height: 60px;
+  width: auto;
 }
 
-/* Logo Float Right */
+.about-header-img {
+  height: 40px;
+  width: auto;
+}
+
 .about-logo-float {
   float: right;
-  width: 180px;
+  width: 230px; /* Increased size */
   margin: 0 0 15px 20px;
   shape-outside: circle();
   border-radius: 50%;
   display: inline-block;
+  position: relative;
+  z-index: 1;
 }
 
 /* Ensure wrapping works on all sizes */
@@ -503,9 +511,11 @@ body {
     <!-- ABOUT TEXT -->
 <div class="about-text">
   <div class="about-header-container">
-    <img src="images/about/SideSun.png" alt="Sunflowers" class="about-sunflower">
-    <img src="images/about/AboutMe.png" alt="About Me" class="about-header-img">
-  </div>
+  <img src="images/about/SideSun.png" alt="Sunflowers Left" class="about-sunflower-left">
+  <img src="images/about/AboutMe.png" alt="About Me" class="about-header-img">
+  <img src="images/about/SideSunR.png" alt="Sunflowers Right" class="about-sunflower-right">
+</div>
+
 
   <!-- Logo Float Top-Right of Paragraph -->
   <img src="images/about/CVLOGO.png" alt="Chrissy Vargas Logo" class="about-logo-float">
