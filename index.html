@@ -1,4 +1,4 @@
-4<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,18 +17,6 @@ body {
   background-repeat: repeat;
   background-size: auto;
   background-position: center;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-html {
-  scroll-padding-top: 100px;
-}
-
-section {
-  padding-top: 80px;
 }
 
 /* ============================================================================
@@ -91,19 +79,12 @@ section {
   box-shadow: none;
 }
 
-/* Align buttons side-by-side */
-.card-body .btn,
-.cert-card .btn {
-  margin: 5px;
-  display: inline-block;
-}
-
 /* ============================================================================
    NAVBAR
 ============================================================================ */
 .navbar.custom-navbar {
-  background-color: rgba(81, 57, 91, 0.5);
-  backdrop-filter: blur(8px);
+  background-color: rgba(81, 57, 91, 0.5); /* Light translucent background */
+  backdrop-filter: blur(8px);                /* Softens background behind navbar */
   position: fixed;
   width: 100%;
   top: 0;
@@ -112,20 +93,16 @@ section {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.navbar.custom-navbar::before {
+  display: none; /* Removes any overlay from tile background */
+}
+
+/* Ensure navbar content sits above background */
+.navbar.custom-navbar .container,
+.navbar.custom-navbar .navbar-nav,
 .navbar.custom-navbar .navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.navbar.custom-navbar .navbar-brand img:first-child {
-  height: 50px;
-  width: auto;
-}
-
-.navbar.custom-navbar .navbar-brand img:last-child {
-  height: 40px;
-  width: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .navbar.custom-navbar .nav-link {
@@ -133,6 +110,7 @@ section {
   font-weight: 600;
   transition: color 0.3s ease;
 }
+
 .navbar.custom-navbar .nav-link:hover,
 .navbar.custom-navbar .nav-link:focus {
   color: #FFD8C2;
@@ -145,17 +123,31 @@ section {
 }
 
 /* ============================================================================
+   RESPONSIVE LOGO
+============================================================================ */
+.navbar-brand img {
+  height: auto;
+  max-height: 40px;
+  width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    max-height: 30px;
+  }
+}
+
+
+/* ============================================================================
    ABOUT SECTION
 ============================================================================ */
 .about-section {
-  background-color: rgba(3, 76, 82, 0.85);
-  padding: 160px 20px 60px;
+  background-color: rgba(3, 76, 82, 0.85); /* Teal with 85% opacity */
+  padding: 60px 20px;
   color: #FCDBD5;
-  position: relative;
-  z-index: 1;
-  min-height: auto;
+  padding-top: 100px;
 }
-
 .about-container {
   display: flex;
   align-items: center;
@@ -165,122 +157,88 @@ section {
   max-width: 1100px;
   margin: 0 auto;
 }
-
-.about-img {
-  text-align: center;
-  z-index: 2;
-}
 .about-img img {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
   object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-.about-img .mt-2 {
-  margin-top: 10px;
-}
-
 .about-text {
   max-width: 600px;
-  font-family: 'Lato', sans-serif;
 }
 .about-text h2 {
   font-size: 2.5rem;
-  margin-bottom: 16px;
+  margin-bottom: 1px;
   color: #F48D79;
-  font-weight: 700;
-  font-family: 'Playfair Display', serif;
 }
 .about-text p {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.6;
   margin-bottom: 15px;
 }
-
-.about-header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  gap: 5px;
-}
-.about-sunflower-left,
-.about-sunflower-right {
-  max-height: 60px;
-  width: auto;
-  opacity: 0.85;
-  margin: 0 8px;
-}
 .about-header-img {
-  height: 40px;
-  width: auto;
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 /* ============================================================================
    PROJECTS SECTION
 ============================================================================ */
 .projects-section {
-  background-color: rgba(3, 76, 82, 0.85);
-  padding: 60px 0 20px;
-  color: #FCDBD5;
-  position: relative;
-  z-index: 1;
+  background-color: rgba(3, 76, 82, 0.85) !important;
+  padding: 50px 0;
 }
-
-.card,
-.cert-card,
-.skill-card {
-  background-color:  #facfc6 !important;
-  color: #034C52;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding-bottom: 20px;
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #F48D79;
 }
-
-.card-title,
-.card-text,
-.cert-card .card-title,
-.cert-card .card-text,
-.skill-card .card-title,
-.skill-card .card-text {
-  color: #034C52;
+.card {
+  background-color: #FCDBD5;
+  border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.card-img-top {
+  max-height: 180px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 15px;
   text-align: center;
 }
-
-.card-body,
-.cert-card .card-body,
-.skill-card .card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.card-title {
+  font-size: 1.25rem;
+  color: #8b4263;
+}
+.card-text {
+  color: #51395b;
+  margin-bottom: 15px;
 }
 
 /* ============================================================================
    SKILLS SECTION
 ============================================================================ */
 .skills-section {
-  background-color: rgba(3, 76, 82, 0.85);
+  background-color: rgba(3, 76, 82, 0.85); /* Teal with 85% opacity */
   color: #FCDBD5;
-  text-align: center;
 }
-
-.skills-section .text-center img {
-  filter: brightness(1.05) contrast(1.2);
+.skill-card {
+  border: none;
+  background-color: #FCDBD5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .skill-img {
-  background-color: #5C6460;
+  background-color: #686762;
   padding: 1rem;
   text-align: center;
 }
-
 .skill-img img {
   max-height: 100px;
   object-fit: contain;
 }
-
 .skills-section .btn {
   display: none;
 }
@@ -301,7 +259,7 @@ section {
 }
 
 .cert-card {
-  background-color: #facfc6 !important;
+  background-color: #FCDBD5;
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -347,7 +305,7 @@ section {
 .certificates-section .row:last-child {
   margin-bottom: 0;
 }
-   
+
 /* ============================================================================
    PERSONAL IMAGE (YOU + CATS)
 ============================================================================ */
@@ -361,7 +319,7 @@ section {
   height: auto;
   display: block;
 }
-   
+
 /* ============================================================================
    CONTACT SECTION
 ============================================================================ */
@@ -390,7 +348,7 @@ section {
 }
 
 .contact-card {
-  background-color:  #facfc6 !important;
+  background-color: rgba(252, 219, 213, 0.9);
   border-radius: 20px;
   max-width: 700px;
   width: 100%;
@@ -462,7 +420,7 @@ section {
     font-size: 1rem;
   }
 }
-   
+
 /* ============================================================================
    FOOTER
 ============================================================================ */
@@ -495,48 +453,25 @@ section {
 <body>
 
 <!-- ============================
-     NAVBAR
-============================= -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#home">
-       <img src="images/about/CVLOGO.png" alt="Christine Vargas Logo">
-      <img src="images/about/DBADD.png" alt="Dashboards and Daydreams Title">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- ============================
      ABOUT SECTION
 ============================= -->
 <section id="about" class="about-section">
   <div class="about-container">
+    <!-- Profile Image + Resume Button -->
     <div class="about-img text-center">
-      <img src="images/about/ProfilePic.png" alt="Christine Vargas">
-      <div class="mt-2">
+      <img src="images/about/Profile pic.png" alt="Christine Vargas">
+      <div class="mt-3">
         <a href="images/certificates/ChrissyVargas_Resume_Analyst.pdf" class="btn btn-secondary" download>
           Download My Resume
         </a>
       </div>
     </div>
+
+    <!-- About Text Content -->
     <div class="about-text">
-      <div class="about-header-container">
-        <img src="images/about/AboutMe.png" alt="About Me" class="about-header-img">
-      </div>
-      <p>Hi, I’m Christine Vargas—an HR Data Analyst and dashboard enthusiast with a passion for turning complex systems into clean, actionable insights.</p>
-      <p>I’ve worked with cross-functional teams at Paylocity, FoundationRisk Partners, and Universal Creative to streamline HRIS processes, build Power BI dashboards for hybrid workplace planning, and reduce manual audits by 40% through automation and Excel logic.</p>
+      <img src="images/about/AB.png" alt="About Me" class="about-header-img">
+      <p>Hi, I’m Christine Vargas—an HR Data Analyst and dashboard enthusiast with a passion for turning complex systems into clean, actionable insights</p>
+      <p>I’ve worked with cross-functional teams at Paylocity, FoundationRisk Partners, and Universal Creative to streamline HRIS processes, build Power BI dashboards for hybrid workplace planning, and reduce manual audits by 40% through automation and Excel logic</p>
       <p>While the data in this portfolio is simulated to protect confidentiality, the tools, workflows, and analytical thinking reflect my real-world experience solving messy, people-driven data challenges. Whether it’s Workday reports, SQL queries, or headcount forecasting models, I build with clarity, collaboration, and purpose.</p>
       <p>Let’s connect—I’m currently seeking opportunities to bring thoughtful data design to HR, BI, or operational analytics teams.</p>
       <p>I'm actively seeking full-time or contract roles in HRIS, HR Analytics, or BI-focused environments where I can make an immediate impact.</p>
@@ -544,21 +479,23 @@ section {
   </div>
 </section>
 
+
 <!-- ============================
      PROJECTS SECTION
 ============================= -->
 <section id="projects" class="projects-section py-5">
   <div class="container">
+    <!-- Section Header Image -->
     <div class="text-center mb-4">
       <img src="images/about/Projects_2.png" alt="Projects Banner" style="max-height: 40px; width: auto;">
     </div>
+
     <div class="row">
-       
       <!-- === Project 1 === -->
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="p-3">
-            <img src="images/projects/HR Tableau 1.png" class="card-img-top rounded" style="height: 180px; width: 100%; object-fit: cover;" alt="HR Tableau Project">
+            <img src="images/projects/HR Tableau 1.png" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="HR Tableau Project">
           </div>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">HR Tableau Project</h5>
@@ -575,7 +512,7 @@ section {
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="p-3">
-            <img src="images/projects/Netflix Power BI.png" class="card-img-top rounded" style="height: 180px; width: 100%; object-fit: cover;" alt="Netflix Power BI Project">
+            <img src="images/projects/Netflix Power BI.png" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="Netflix Power BI Project">
           </div>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Netflix Power BI Project</h5>
@@ -588,27 +525,28 @@ section {
         </div>
       </div>
 
-      <!-- Project 3     -->
+      <!-- Project 3 
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="p-3">
-            <img src="images/projects/Website.png" class="card-img-top rounded" style="height: 180px; width: 100%; object-fit: cover;" alt="SQL Project">
+            <img src="images/projects/Screenshot 2025-05-02 180035.png" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="SQL Project">
           </div>
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Portfolio Website</h5>
-            <p class="card-text flex-grow-1">Responsive HTML/CSS portfolio built from scratch to showcase HR dashboards, BI work, and certifications. Ongoing enhancements using Bootstrap and animation.</p>
+            <h5 class="card-title">SQL Insights Project</h5>
+            <p class="card-text flex-grow-1">In Progress</p>
             <div>
+              <a href="#" class="btn btn-primary">View Live</a>
               <a href="#" class="btn btn-secondary">Project Overview</a>
             </div>
           </div>
         </div>
       </div>
-
+    -->
       <!-- Project 4 
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="p-3">
-            <img src="images/projects/excel.jpg" class="card-img-top rounded" style="height: 180px; object-fit: cover;" alt="Project 4">
+            <img src="images/projects/excel.jpg" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="Project 4">
           </div>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Excel Project</h5>
@@ -625,7 +563,7 @@ section {
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="p-3">
-            <img src="images/projects/python.png" class="card-img-top rounded" style="height: 180px; object-fit: cover;" alt="Project 5">
+            <img src="images/projects/python.png" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="Project 5">
           </div>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Python Project</h5>
@@ -642,7 +580,7 @@ section {
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
           <div class="p-3">
-            <img src="images/projects/0_bPRPonZxCQ5xLIDh.jpg" class="card-img-top rounded" style="height: 180px; object-fit: cover;" alt="Project 6">
+            <img src="images/projects/0_bPRPonZxCQ5xLIDh.jpg" class="card-img-top rounded" style="height: 220px; object-fit: cover;" alt="Project 6">
           </div>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">TBD</h5>
@@ -664,7 +602,7 @@ section {
 ============================= -->
 <section id="skills" class="skills-section py-5">
   <div class="container">
-    
+
     <!-- Section Header -->
     <div class="text-center mb-5">
       <img src="images/about/Skills.png" alt="Skills Heading" style="max-height: 40px; width: auto;">
@@ -674,16 +612,15 @@ section {
          TECHNICAL SKILLS
     ============================== -->
     <div class="text-center mb-4">
-      <img src="images/skills/TechnicalSkills.png" alt="Technical Skills Heading" style="max-height: 30px;">
+      <img src="images/certificates/TechnicalSkills.png" alt="Technical Skills Heading" style="max-height: 30px;">
     </div>
 
     <div class="row justify-content-center">
-      <!-- Each card is in a column -->
       <!-- Tableau -->
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/Tableau Logo.png" alt="Tableau">
+          <div class="skill-img bg-icon">
+            <img src="images/skills/Tableau Logo.png" class="card-img-top" alt="Tableau">
           </div>
           <div class="card-body">
             <h5 class="card-title">Tableau</h5>
@@ -695,8 +632,8 @@ section {
       <!-- Power BI -->
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/Power BI Logo.png" alt="Power BI">
+          <div class="skill-img bg-icon">
+            <img src="images/skills/Power BI Logo.png" class="card-img-top" alt="Power BI">
           </div>
           <div class="card-body">
             <h5 class="card-title">Power BI</h5>
@@ -708,8 +645,8 @@ section {
       <!-- SQL -->
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/SQL Logo.png" alt="SQL">
+          <div class="skill-img bg-icon">
+            <img src="images/skills/SQL Logo.png" class="card-img-top" alt="SQL">
           </div>
           <div class="card-body">
             <h5 class="card-title">SQL</h5>
@@ -718,24 +655,11 @@ section {
         </div>
       </div>
 
-      <!-- Python -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/Python.png" alt="Python">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Python</h5>
-            <p class="card-text">Scripting, data cleaning, and automation using libraries like Pandas and NumPy.</p>
-          </div>
-        </div>
-      </div>
-
       <!-- Excel -->
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/excel.png" alt="Excel">
+          <div class="skill-img bg-icon">
+            <img src="images/skills/excel.png" class="card-img-top" alt="Excel">
           </div>
           <div class="card-body">
             <h5 class="card-title">Excel</h5>
@@ -745,10 +669,10 @@ section {
       </div>
 
       <!-- Smartsheet -->
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
         <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/Smartsheet Logo.png" alt="Smartsheet">
+          <div class="skill-img bg-icon">
+            <img src="images/skills/Smartsheet Logo.png" class="card-img-top" alt="Smartsheet">
           </div>
           <div class="card-body">
             <h5 class="card-title">Smartsheet</h5>
@@ -758,10 +682,10 @@ section {
       </div>
 
       <!-- Workday -->
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
         <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/Workday Logo.png" alt="Workday">
+          <div class="skill-img bg-icon">
+            <img src="images/skills/Workday Logo.png" class="card-img-top" alt="Workday">
           </div>
           <div class="card-body">
             <h5 class="card-title">Workday</h5>
@@ -775,24 +699,30 @@ section {
          SOFT SKILLS
     ============================== -->
     <div class="text-center mb-4 mt-5">
-      <img src="images/skills/SoftSkills.png" alt="Soft Skills Heading" style="max-height: 30px;">
+      <img src="images/certificates/SoftSkills.png" alt="Soft Skills Heading" style="max-height: 30px;">
+<!-- ============================
+     SOFT SKILLS
+============================= -->
+<div class="text-center mb-4 mt-5">
+  <img src="images/certificates/SoftSkills.png" alt="Soft Skills Heading" style="max-height: 30px;">
+</div>
+
+<div class="row justify-content-center">
+
+  <!-- Communication -->
+  <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
+    <div class="card skill-card h-100">
+      <div class="skill-img bg-icon">
+        <img src="images/skills/Communication.png" class="card-img-top" alt="Communication">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Communication</h5>
+        <p class="card-text">Clear, concise reporting and stakeholder engagement across departments.</p>
+      </div>
     </div>
+  </div>
 
     <div class="row justify-content-center">
-      <!-- Repeat this structure for each soft skill -->
-      <!-- Example: Communication -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card skill-card h-100">
-          <div class="skill-img">
-            <img src="images/skills/Communication.png" alt="Communication">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Communication</h5>
-            <p class="card-text">Clear, concise reporting and stakeholder engagement across departments.</p>
-          </div>
-        </div>
-      </div>
-
   <!-- Analytical Thinking -->
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
@@ -806,6 +736,14 @@ section {
     </div>
   </div>
 
+      <!-- Communication -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card skill-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Communication</h5>
+            <p class="card-text">Clear, concise reporting and stakeholder engagement across departments.</p>
+          </div>
+        </div>
   <!-- Problem Solving -->
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
@@ -819,6 +757,14 @@ section {
     </div>
   </div>
 
+      <!-- Analytical Thinking -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card skill-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Analytical Thinking</h5>
+            <p class="card-text">Turning complex data into actionable insights for business performance.</p>
+          </div>
+        </div>
   <!-- Collaboration -->
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
@@ -832,6 +778,14 @@ section {
     </div>
   </div>
 
+      <!-- Problem Solving -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card skill-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Problem Solving</h5>
+            <p class="card-text">Proactively identifying and addressing gaps in systems, data, or processes.</p>
+          </div>
+        </div>
   <!-- Time Management -->
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
@@ -845,11 +799,19 @@ section {
     </div>
   </div>
 
+      <!-- Collaboration -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card skill-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Collaboration</h5>
+            <p class="card-text">Cross-functional teamwork with HR, IT, and Finance to streamline outcomes.</p>
+          </div>
+        </div>
   <!-- Stakeholder Engagement -->
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
       <div class="skill-img bg-icon">
-        <img src="images/skills/Steakholder.png" class="card-img-top" alt="Stakeholder Engagement">
+        <img src="images/skills/Stakeholder Engagement.png" class="card-img-top" alt="Stakeholder Engagement">
       </div>
       <div class="card-body">
         <h5 class="card-title">Stakeholder Engagement</h5>
@@ -858,11 +820,19 @@ section {
     </div>
   </div>
 
+      <!-- Time Management -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card skill-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Time Management</h5>
+            <p class="card-text">Efficiently balancing high volumes of tasks, audits, and reporting deadlines.</p>
+          </div>
+        </div>
   <!-- Continuous Learning & Adaptability -->
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
       <div class="skill-img bg-icon">
-        <img src="images/skills/Learning.png" class="card-img-top" alt="Continuous Learning & Adaptability">
+        <img src="images/skills/Continuous Learning.png" class="card-img-top" alt="Continuous Learning & Adaptability">
       </div>
       <div class="card-body">
         <h5 class="card-title">Continuous Learning & Adaptability</h5>
@@ -871,11 +841,12 @@ section {
     </div>
   </div>
 
+    </div> <!-- /.row -->
   <!-- Attention to Detail -->
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
       <div class="skill-img bg-icon">
-        <img src="images/skills/Detail.png" class="card-img-top" alt="Attention to Detail">
+        <img src="images/skills/Attention to Detail.png" class="card-img-top" alt="Attention to Detail">
       </div>
       <div class="card-body">
         <h5 class="card-title">Attention to Detail</h5>
@@ -888,7 +859,7 @@ section {
   <div class="col-lg-3 col-md-6 mb-4 d-flex justify-content-center">
     <div class="card skill-card h-100">
       <div class="skill-img bg-icon">
-        <img src="images/skills/Strategic.png" class="card-img-top" alt="Strategic Thinking">
+        <img src="images/skills/Strategic Thinking.png" class="card-img-top" alt="Strategic Thinking">
       </div>
       <div class="card-body">
         <h5 class="card-title">Strategic Thinking</h5>
@@ -914,16 +885,17 @@ section {
   </div> <!-- /.container -->
 </section>
 
-  
+
 <!-- ============================
      CERTIFICATES SECTION
 ============================= -->
 <section id="certificates" class="certificates-section py-5">
   <div class="container">
+
+    <!-- Section Heading -->
     <div class="text-center mb-5">
       <img src="images/about/certificate (Youtube Banner).png" alt="Certificates Heading" style="max-height: 40px;">
     </div>
-    <div class="row justify-content-center">
 
     <!-- ============================
          Data Analytics Certifications
@@ -932,7 +904,7 @@ section {
       <img src="images/certificates/DataAnalyticsCert.png" alt="Data Analytics Certification Heading" style="max-height: 30px;">
     </div>
     <div class="row justify-content-center">
-      
+
       <!-- Certificate: Google Data Analytics -->
       <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
         <div class="card cert-card h-100 d-flex flex-column">
@@ -943,7 +915,7 @@ section {
             <img src="images/certificates/GoogleLogo.png" alt="Google Logo" style="max-height: 40px;" class="mb-2 mx-auto">
             <h5 class="card-title">Data Analytics</h5>
             <p class="card-text">Data Analysis, SQL, Spreadsheet Software, Business Analysis, Communication, Data Visualization</p>
-            <div class="d-flex justify-content-center gap-2 mt-3">
+            <div class="mt-auto">
               <a href="https://coursera.org/share/54b3e237fcea6a032fc460ed57e22611" class="btn btn-primary btn-sm me-2" target="_blank">Certificate Link</a>
               <a href="https://www.coursera.org/professional-certificates/google-data-analytics" class="btn btn-secondary btn-sm" target="_blank">Course Link</a>
             </div>
@@ -961,7 +933,7 @@ section {
             <img src="images/certificates/GoogleLogo.png" alt="Google Logo" style="max-height: 40px;" class="mb-2 mx-auto">
             <h5 class="card-title">Advanced Data Analytics</h5>
             <p class="card-text">Predictive Modeling, Data Science, EDA, Jupyter, Tableau, Machine Learning, Python</p>
-            <div class="d-flex justify-content-center gap-2 mt-3">
+            <div class="mt-auto">
               <a href="https://coursera.org/share/a7858236a4203eeb726a47a8a683ee09" class="btn btn-primary btn-sm me-2" target="_blank">Certificate Link</a>
               <a href="https://www.coursera.org/professional-certificates/google-data-analytics" class="btn btn-secondary btn-sm" target="_blank">Course Link</a>
             </div>
@@ -979,7 +951,7 @@ section {
             <img src="images/certificates/UCILogo.png" alt="UC Irvine Logo" style="max-height: 40px;" class="mb-2 mx-auto">
             <h5 class="card-title">Human Resources Analytics</h5>
             <p class="card-text">Storytelling, HR Best Practices, Data Analysis, People Analysis, Communication</p>
-            <div class="d-flex justify-content-center gap-2 mt-3">
+            <div class="mt-auto">
               <a href="https://coursera.org/share/4c8fa967bab1a367d619695a1bbadd94" class="btn btn-primary btn-sm me-2" target="_blank">Certificate Link</a>
               <a href="https://www.coursera.org/learn/human-resources-analytics" class="btn btn-secondary btn-sm" target="_blank">Course Link</a>
             </div>
@@ -997,7 +969,7 @@ section {
             <img src="images/certificates/UVLogo.png" alt="UVA Logo" style="max-height: 40px;" class="mb-2 mx-auto">
             <h5 class="card-title">Marketing Analytics</h5>
             <p class="card-text">Marketing, Brand Equity, Regression, Strategy, Experiments, CLV</p>
-            <div class="d-flex justify-content-center gap-2 mt-3">
+            <div class="mt-auto">
               <a href="https://coursera.org/share/0a62f3505c20916dc7e5a73b38dfb8b2" class="btn btn-primary btn-sm me-2" target="_blank">Certificate Link</a>
               <a href="https://www.coursera.org/learn/uva-darden-market-analytics" class="btn btn-secondary btn-sm" target="_blank">Course Link</a>
             </div>
@@ -1025,7 +997,7 @@ section {
         <img src="images/certificates/GoogleLogo.png" alt="Google Logo" style="max-height: 40px;" class="mb-2 mx-auto">
         <h5 class="card-title">Business Intelligence</h5>
         <p class="card-text">Sheets, Data Analysis, Business Process, Data Modeling, Dashboarding and Reporting, Business Analysis, Data Visualization, BigQuery, Tableau Software, ETL, SQL</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/25e3664fc4c8f9e1e3e39cc25bcf3886" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/professional-certificates/google-business-intelligence" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1043,7 +1015,7 @@ section {
         <img src="images/certificates/TableauLogo.png" alt="Tableau Logo" style="max-height: 40px;" class="mb-2 mx-auto">
         <h5 class="card-title">Tableau Business Intelligence Analyst</h5>
         <p class="card-text">Reporting Skills, Data Management, Data Analysis, Presentation Skills, Tableau Software, Visualizations</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/ba7bfe0cffb2d9858d923d3fc970e099" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/professional-certificates/tableau-business-intelligence-analyst" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1061,7 +1033,7 @@ section {
         <img src="images/certificates/PenLogo.png" alt="UPenn Logo" style="max-height: 40px;" class="mb-2 mx-auto">
         <h5 class="card-title">Business Analytics</h5>
         <p class="card-text">Spreadsheet Software, Customer Analytics, Probability, Business Analytics, Market Research, Operations</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/328bd0c53afe9f0248a9c13564994bff" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/specializations/business-analytics" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1079,7 +1051,7 @@ section {
         <img src="images/certificates/KALogo.png" alt="Microsoft Logo" style="max-height: 30px;" class="mb-2 mx-auto">
         <h5 class="card-title">From Excel to Power BI</h5>
         <p class="card-text">Data Analysis, Power BI, Business Analytics, Data Visualization, Excel</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/85884d60eb75bdf7e552985870bacde9" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/learn/from-excel-to-power-bi" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1108,7 +1080,7 @@ section {
         <img src="images/certificates/HRCILogo.png" alt="HRCI Logo" style="max-height: 50px;" class="mb-2 mx-auto">
         <h5 class="card-title">HRCI Human Resource Associate</h5>
         <p class="card-text">Training Development, Employee Relations, Recruitment, Compliance Strategy, Performance Management</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/beb037c346c2e2245c266c36f5e4fbe6" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/professional-certificates/hrci-human-resource-associate" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1126,7 +1098,7 @@ section {
         <img src="images/certificates/WorkdayLogo.png" alt="Workday Logo" style="max-height: 50px;" class="mb-2 mx-auto">
         <h5 class="card-title">Workday Basics Series</h5>
         <p class="card-text">Configurable Security Frameworks, Business Process, Workday Terminology, Workday Reporting</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/c69d983764440524b4e47e6b37dad2be" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/learn/workday-basics-series" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1144,7 +1116,7 @@ section {
         <img src="images/certificates/WorkdayLogo.png" alt="Workday Logo" style="max-height: 50px;" class="mb-2 mx-auto">
         <h5 class="card-title">Workday in Action Series</h5>
         <p class="card-text">Business Process, Workday Reporting, Workday Technology</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/5c8e19459a9bb460834dc7cd880f7dce" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/learn/workday-in-action-series" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1174,7 +1146,7 @@ section {
         <img src="images/certificates/CourseraLogo.png" alt="Coursera Logo" style="max-height: 20px;" class="mb-2 mx-auto">
         <h5 class="card-title">Workforce Productivity</h5>
         <p class="card-text">Lean Management, Six Sigma Techniques, Performance Metrics Development, Technology Utilization, Continuous Improvement Cultivation</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/11c3dab3a638ff583b113f23f9519112" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/learn/workforce-productivity" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1192,7 +1164,7 @@ section {
         <img src="images/certificates/CourseraLogo.png" alt="Coursera Logo" style="max-height: 20px;" class="mb-2 mx-auto">
         <h5 class="card-title">AI in Workforce Management</h5>
         <p class="card-text">Resource Management, AI Integration, Decision-Making, Process Optimization, Strategic Planning</p>
-        <div class="d-flex justify-content-center gap-2 mt-3">
+        <div class="mt-auto">
           <a href="https://coursera.org/share/f2258c90351f1e1b1510eaa200770b5b" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">Certificate Link</a>
           <a href="https://www.coursera.org/learn/ai-in-workforce-management" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Course Link</a>
         </div>
@@ -1210,17 +1182,24 @@ section {
 ============================= -->
 <section id="contact" class="contact-section">
   <div class="container d-flex flex-column align-items-center">
+
+    <!-- Contact Card -->
     <div class="card contact-card p-4 shadow-lg">
+
+      <!-- Personal Image (inside the card) -->
       <div class="text-center mb-3">
         <div class="personal-img-wrapper">
           <img src="images/about/pixelme.png" alt="Christine and cats">
         </div>
       </div>
+
       <div class="text-center">
         <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img mb-3">
         <p class="contact-subtext">Have a question, a dashboard idea, or just want to say hi?</p>
       </div>
+
       <form action="https://formspree.io/f/xblogwob" method="POST">
+        <!-- Form fields -->
         <div class="form-group mb-3">
           <input type="text" name="name" class="form-control" placeholder="Your Name" required>
         </div>
@@ -1234,26 +1213,50 @@ section {
           <button type="submit" class="btn btn-primary">Send Message</button>
         </div>
       </form>
-    </div>
-  </div>
+
+    </div> <!-- end .card -->
+  </div> <!-- end .container -->
 </section>
+
 
 <!-- ============================
      FOOTER
 ============================= -->
-<footer class="footer">
-  chrissy@dashboardsanddaydreams.com | +1(386)-801-7514 |
-  <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
-    <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn |
-  </a>
-  <a href="https://github.com/PeskyPxlPixi" target="_blank">
-    <img src="images/skills/GetHub.png" alt="GitHub">GitHub
-  </a>
-</footer>
+  <footer class="footer">
+    chrissy@dashboardsanddaydreams.com | +1(386)-801-7514 |
+    <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
+      <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn | 
+    <a href="https://github.com/PeskyPxlPixi" target="_blank">
+      <img src="images/skills/GetHub.png" alt="LinkedIn">Github
+    </a>
+  </footer>
 
-<!-- Bootstrap JS -->
+<!-- ============================
+     NAVBAR
+============================= -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="images/about/DBADD.png" alt="Christine Vargas Logo" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
