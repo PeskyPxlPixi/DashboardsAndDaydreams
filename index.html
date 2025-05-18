@@ -84,7 +84,7 @@ body {
 ============================================================================ */
 .navbar.custom-navbar {
   background-color: rgba(81, 57, 91, 0.5); /* Light translucent background */
-  backdrop-filter: blur(8px);                /* Softens background behind navbar */
+  backdrop-filter: blur(8px);
   position: fixed;
   width: 100%;
   top: 0;
@@ -94,10 +94,9 @@ body {
 }
 
 .navbar.custom-navbar::before {
-  display: none; /* Removes any overlay from tile background */
+  display: none;
 }
 
-/* Ensure navbar content sits above background */
 .navbar.custom-navbar .container,
 .navbar.custom-navbar .navbar-nav,
 .navbar.custom-navbar .navbar-brand {
@@ -105,39 +104,33 @@ body {
   z-index: 1;
 }
 
+/* NAV LINKS */
 .navbar.custom-navbar .nav-link {
   color: #f48d79;
   font-weight: 600;
   transition: color 0.3s ease;
 }
-
 .navbar.custom-navbar .nav-link:hover,
 .navbar.custom-navbar .nav-link:focus {
   color: #FFD8C2;
   text-decoration: underline;
 }
-
 .navbar.custom-navbar .nav-item.active .nav-link {
   color: #ffffff;
   font-weight: bold;
 }
-/* Adjust spacing and alignment of the logo + title combo */
+
+/* BRAND GROUP (logo + title) */
 .navbar .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 12px; /* space between logo and title */
+  gap: 12px;
 }
-/* Increase logo size for readability */
+
+/* LOGO */
 .navbar .navbar-brand img:first-child {
-  height: 60px;         /* larger logo */
-  width: auto;
-  margin-right: 8px;    /* tighter spacing if needed */
-}
-/* Keep the title aligned nicely with the logo */
-.navbar .navbar-brand img:last-child {
-  height: 40px;
-  width: auto;
-}
+  height: 60px;
+  width:
 
 
 /* ============================================================================
