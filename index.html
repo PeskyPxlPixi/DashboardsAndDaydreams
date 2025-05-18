@@ -121,6 +121,24 @@ body {
   color: #ffffff;
   font-weight: bold;
 }
+/* Adjust spacing and alignment of the logo + title combo */
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between logo and title */
+}
+/* Increase logo size for readability */
+.navbar .navbar-brand img:first-child {
+  height: 60px;         /* larger logo */
+  width: auto;
+  margin-right: 8px;    /* tighter spacing if needed */
+}
+/* Keep the title aligned nicely with the logo */
+.navbar .navbar-brand img:last-child {
+  height: 40px;
+  width: auto;
+}
+
 
 /* ============================================================================
    RESPONSIVE LOGO
@@ -1250,10 +1268,12 @@ body {
 ============================= -->
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#home">
-       <img src="images/about/CVLOGO.png" alt="Christine Vargas Icon" height="50" class="mr-2">
-      <img src="images/about/DBADD.png" alt="Christine Vargas Logo" height="40">
-    </a>
+    
+     <a class="navbar-brand d-flex align-items-center" href="#home">
+  <img src="images/about/CVLOGO.png" alt="Christine Vargas Logo" height="48" style="margin-right: 12px;">
+  <img src="images/about/DBADD.png" alt="Dashboards and Daydreams Title" height="40">
+</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
