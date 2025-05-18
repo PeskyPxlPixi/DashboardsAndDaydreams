@@ -12,13 +12,24 @@
 /* ============================================================================
    GLOBAL STYLES
 ============================================================================ */
-    body {
-      background-image: url('images/about/tile5.jpg');
-      background-repeat: repeat;
-      background-size: auto;
-      background-position: center;
-      padding-top: 80px;
-    }
+body {
+  background-image: url('images/about/tile5.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+section {
+  padding-top: 80px;
+}
 
 /* ============================================================================
    TYPOGRAPHY & FORM ELEMENTS
@@ -142,17 +153,16 @@
   }
 }
 
-   
 /* ============================================================================
    ABOUT SECTION
 ============================================================================ */
 .about-section {
   background-color: rgba(3, 76, 82, 0.85);
-  padding: 180px 20px 60px; /* Fixes navbar overlap */
+  padding: 180px 20px 60px;
   color: #FCDBD5;
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  min-height: auto;
 }
 
 .about-container {
@@ -165,7 +175,6 @@
   margin: 0 auto;
 }
 
-/* PROFILE IMAGE + BUTTON */
 .about-img {
   text-align: center;
   z-index: 2;
@@ -180,21 +189,6 @@
   margin-top: 10px;
 }
 
-/* BUTTON */
-.btn-secondary {
-  background-color: #F48D79;
-  color: #034C52;
-  border: 1px solid #826E67;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.btn-secondary:hover {
-  background-color: #034C52;
-  color: #F48D79;
-  border-color: #026773;
-  transform: scale(1.05);
-}
-
-/* TEXT BLOCK */
 .about-text {
   max-width: 600px;
   font-family: 'Lato', sans-serif;
@@ -212,7 +206,6 @@
   margin-bottom: 15px;
 }
 
-/* HEADING + SUNFLOWERS */
 .about-header-container {
   display: flex;
   align-items: center;
@@ -233,79 +226,14 @@
 }
 
 /* ============================================================================
-   RESPONSIVE TWEAKS
-============================================================================ */
-@media (max-width: 768px) {
-  .about-img img {
-    width: 250px;
-    height: 250px;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .about-text h2 {
-    font-size: 2rem;
-  }
-
-  .about-sunflower-left,
-  .about-sunflower-right {
-    max-height: 40px;
-  }
-}
-/* ============================================================================
-   RESPONSIVE ADJUSTMENTS
-============================================================================ */
-@media (max-width: 576px) {
-  .about-img img {
-    width: 250px;
-    height: 250px;
-  }
-  .about-text {
-    text-align: center;
-  }
-  .about-text h2 {
-    font-size: 2rem;
-  }
-  .about-sunflower-left,
-  .about-sunflower-right {
-    max-height: 40px;
-  }
-}
-
-/* ============================================================================
    PROJECTS SECTION
 ============================================================================ */
 .projects-section {
-  background-color: rgba(3, 76, 82, 0.85) !important;
-  padding: 50px 0;
-}
-.projects-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #F48D79;
-}
-.card {
-  background-color: #FCDBD5;
-  border: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-.card-img-top {
-  max-height: 180px;
-  object-fit: cover;
-}
-.card-body {
-  padding: 15px;
-  text-align: center;
-}
-.card-title {
-  font-size: 1.25rem;
-  color: #8b4263;
-}
-.card-text {
-  color: #51395b;
-  margin-bottom: 15px;
+  background-color: rgba(3, 76, 82, 0.85);
+  padding: 60px 0 20px;
+  color: #FCDBD5;
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================================================
@@ -545,67 +473,67 @@
 <body>
 
 <!-- ============================
+     NAVBAR
+============================= -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#home">
+      <img src="images/about/CVLOGO.png" alt="Christine Vargas Logo">
+      <img src="images/about/DBADD.png" alt="Dashboards and Daydreams Title">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================
      ABOUT SECTION
 ============================= -->
-  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#home">
-        <img src="images/about/CVLOGO.png" alt="Christine Vargas Logo">
-        <img src="images/about/DBADD.png" alt="Dashboards and Daydreams Title">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+<section id="about" class="about-section">
+  <div class="about-container">
+    <div class="about-img text-center">
+      <img src="images/about/ProfilePic.png" alt="Christine Vargas">
+      <div class="mt-2">
+        <a href="images/certificates/ChrissyVargas_Resume_Analyst.pdf" class="btn btn-secondary" download>
+          Download My Resume
+        </a>
       </div>
     </div>
-  </nav>
-
-  <section id="about" class="about-section">
-    <div class="about-container">
-      <div class="about-img text-center">
-        <img src="images/about/ProfilePic.png" alt="Christine Vargas">
-        <div class="mt-2">
-          <a href="images/certificates/ChrissyVargas_Resume_Analyst.pdf" class="btn btn-secondary" download>
-            Download My Resume
-          </a>
-        </div>
+    <div class="about-text">
+      <div class="about-header-container">
+        <img src="images/about/SideSun.png" alt="Sunflowers Left" class="about-sunflower-left">
+        <img src="images/about/AboutMe.png" alt="About Me" class="about-header-img">
+        <img src="images/about/SideSunR.png" alt="Sunflowers Right" class="about-sunflower-right">
       </div>
-      <div class="about-text">
-        <div class="about-header-container">
-          <img src="images/about/SideSun.png" alt="Sunflowers Left" class="about-sunflower-left">
-          <img src="images/about/AboutMe.png" alt="About Me" class="about-header-img">
-          <img src="images/about/SideSunR.png" alt="Sunflowers Right" class="about-sunflower-right">
-        </div>
-        <p>Hi, I’m Christine Vargas—an HR Data Analyst and dashboard enthusiast with a passion for turning complex systems into clean, actionable insights.</p>
-        <p>I’ve worked with cross-functional teams at Paylocity, FoundationRisk Partners, and Universal Creative to streamline HRIS processes, build Power BI dashboards for hybrid workplace planning, and reduce manual audits by 40% through automation and Excel logic.</p>
-        <p>While the data in this portfolio is simulated to protect confidentiality, the tools, workflows, and analytical thinking reflect my real-world experience solving messy, people-driven data challenges. Whether it’s Workday reports, SQL queries, or headcount forecasting models, I build with clarity, collaboration, and purpose.</p>
-        <p>Let’s connect—I’m currently seeking opportunities to bring thoughtful data design to HR, BI, or operational analytics teams.</p>
-        <p>I'm actively seeking full-time or contract roles in HRIS, HR Analytics, or BI-focused environments where I can make an immediate impact.</p>
-      </div>
+      <p>Hi, I’m Christine Vargas—an HR Data Analyst and dashboard enthusiast with a passion for turning complex systems into clean, actionable insights.</p>
+      <p>I’ve worked with cross-functional teams at Paylocity, FoundationRisk Partners, and Universal Creative to streamline HRIS processes, build Power BI dashboards for hybrid workplace planning, and reduce manual audits by 40% through automation and Excel logic.</p>
+      <p>While the data in this portfolio is simulated to protect confidentiality, the tools, workflows, and analytical thinking reflect my real-world experience solving messy, people-driven data challenges. Whether it’s Workday reports, SQL queries, or headcount forecasting models, I build with clarity, collaboration, and purpose.</p>
+      <p>Let’s connect—I’m currently seeking opportunities to bring thoughtful data design to HR, BI, or operational analytics teams.</p>
+      <p>I'm actively seeking full-time or contract roles in HRIS, HR Analytics, or BI-focused environments where I can make an immediate impact.</p>
     </div>
-  </section>
-
-
+  </div>
+</section>
 
 <!-- ============================
      PROJECTS SECTION
 ============================= -->
 <section id="projects" class="projects-section py-5">
   <div class="container">
-    <!-- Section Header Image -->
     <div class="text-center mb-4">
       <img src="images/about/Projects_2.png" alt="Projects Banner" style="max-height: 40px; width: auto;">
     </div>
-
     <div class="row">
+       
       <!-- === Project 1 === -->
       <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
@@ -716,11 +644,10 @@
 ============================= -->
 <section id="skills" class="skills-section py-5">
   <div class="container">
-
-    <!-- Section Header -->
     <div class="text-center mb-5">
       <img src="images/about/Skills.png" alt="Skills Heading" style="max-height: 40px; width: auto;">
     </div>
+    <div class="row justify-content-center">
 
     <!-- ============================
          TECHNICAL SKILLS
@@ -971,11 +898,10 @@
 ============================= -->
 <section id="certificates" class="certificates-section py-5">
   <div class="container">
-
-    <!-- Section Heading -->
     <div class="text-center mb-5">
       <img src="images/about/certificate (Youtube Banner).png" alt="Certificates Heading" style="max-height: 40px;">
     </div>
+    <div class="row justify-content-center">
 
     <!-- ============================
          Data Analytics Certifications
@@ -1262,24 +1188,17 @@
 ============================= -->
 <section id="contact" class="contact-section">
   <div class="container d-flex flex-column align-items-center">
-
-    <!-- Contact Card -->
     <div class="card contact-card p-4 shadow-lg">
-
-      <!-- Personal Image (inside the card) -->
       <div class="text-center mb-3">
         <div class="personal-img-wrapper">
           <img src="images/about/pixelme.png" alt="Christine and cats">
         </div>
       </div>
-
       <div class="text-center">
         <img src="images/about/contactme.png" alt="Contact Me" class="contact-header-img mb-3">
         <p class="contact-subtext">Have a question, a dashboard idea, or just want to say hi?</p>
       </div>
-
       <form action="https://formspree.io/f/xblogwob" method="POST">
-        <!-- Form fields -->
         <div class="form-group mb-3">
           <input type="text" name="name" class="form-control" placeholder="Your Name" required>
         </div>
@@ -1293,51 +1212,26 @@
           <button type="submit" class="btn btn-primary">Send Message</button>
         </div>
       </form>
-
-    </div> <!-- end .card -->
-  </div> <!-- end .container -->
+    </div>
+  </div>
 </section>
-
 
 <!-- ============================
      FOOTER
 ============================= -->
-  <footer class="footer">
-    chrissy@dashboardsanddaydreams.com | +1(386)-801-7514 |
-    <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
-      <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn | 
-    <a href="https://github.com/PeskyPxlPixi" target="_blank">
-      <img src="images/skills/GetHub.png" alt="LinkedIn">Github
-    </a>
-  </footer>
+<footer class="footer">
+  chrissy@dashboardsanddaydreams.com | +1(386)-801-7514 |
+  <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
+    <img src="images/skills/Linked In.png" alt="LinkedIn">LinkedIn |
+  </a>
+  <a href="https://github.com/PeskyPxlPixi" target="_blank">
+    <img src="images/skills/GetHub.png" alt="GitHub">GitHub
+  </a>
+</footer>
 
-<!-- ============================
-     NAVBAR
-============================= -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#home">
-      <img src="images/about/CVLOGO.png" alt="Christine Vargas Logo">
-      <img src="images/about/DBADD.png" alt="Dashboards and Daydreams Title">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>v>
-
-<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
