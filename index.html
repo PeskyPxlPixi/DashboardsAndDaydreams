@@ -236,29 +236,53 @@ section {
   z-index: 1;
 }
 
+.card {
+  background-color: #FCDBD5;
+  color: #034C52;
+}
+
+.card-title,
+.card-text {
+  color: #034C52;
+}
+
 /* ============================================================================
    SKILLS SECTION
 ============================================================================ */
 .skills-section {
-  background-color: rgba(3, 76, 82, 0.85); /* Teal with 85% opacity */
+  background-color: rgba(3, 76, 82, 0.85);
   color: #FCDBD5;
 }
+
+.skills-section .text-center img {
+  filter: brightness(1.05) contrast(1.2);
+}
+
 .skill-card {
   border: none;
   background-color: #FCDBD5;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #034C52;
 }
+
+.skill-card .card-title {
+  font-weight: 600;
+  color: #034C52;
+}
+
 .skill-img {
-  background-color: #686762;
+  background-color: #5C6460;
   padding: 1rem;
   text-align: center;
 }
+
 .skill-img img {
   max-height: 100px;
   object-fit: contain;
 }
+
 .skills-section .btn {
   display: none;
 }
