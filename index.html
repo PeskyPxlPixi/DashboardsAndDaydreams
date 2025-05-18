@@ -199,18 +199,18 @@ body {
   gap: 15px;
   position: relative;
 }
-
 .about-sunflower-left,
 .about-sunflower-right {
   max-height: 60px;
   width: auto;
+  opacity: 0.85;
+  margin: 0 8px; /* reduce horizontal spacing */
+  vertical-align: middle; /* ensures better alignment with the heading */
 }
-
 .about-header-img {
   height: 40px;
   width: auto;
 }
-
 /* Ensure wrapping works on all sizes */
 .about-text::after {
   content: "";
