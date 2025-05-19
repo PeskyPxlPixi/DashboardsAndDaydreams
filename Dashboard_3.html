@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Netflix Dashboard | Dashboards and Daydreams</title>
+      
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+      
+        <!-- ✅ Bootstrap 4.5.2 CSS and JS only (RECOMMENDED) -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+        <style>
+/* ============================================================================
+   GLOBAL BASE STYLES
+============================================================================ */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #FCEFEA;
+  background-image: url('images/about/tile5.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
+
+/* ============================================================================
+   BACKGROUND OVERLAY EFFECT
+============================================================================ */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+/* ============================================================================
+   NAVIGATION BAR (Stacked: Logo on top, links centered below)
+============================================================================ */
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack logo and links */
+  align-items: center;     /* Center horizontally */
+  padding: 20px;
+  background-color: #034C52;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.navbar img {
+  height: 50px;
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar div {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Nav links */
+.navbar a {
+  color: #FCDBD5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+============================================================================ */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .navbar img {
+    height: 40px; /* Smaller logo on mobile */
+    margin-bottom: 10px;
+  }
+
+  .navbar div {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ============================================================================
+   SECTION BASE STYLES
+============================================================================ */
+.section {
+  padding: 100px 20px 40px;
+  text-align: center;
+}
+
+/* ============================================================================
+   GLASS CARD STYLE (Used for overlays or content blocks)
+============================================================================ */
+.glass-card {
+  background-color: rgba(3, 76, 82, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  color: #FCDBD5;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.glass-card ul {
+  text-align: left;
+  padding-left: 25px;
+  line-height: 1.8;
+}
+
+/* ============================================================================
+   FOOTER STYLES
+============================================================================ */
+.footer {
+  background-color: rgba(3, 76, 82, 0.75);
+  color: #FCEFEA;
+  text-align: center;
+  padding: 30px 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.footer a {
+  color: #FCEFEA;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer img {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* ============================================================================
+       NO SHADOW IMAGE WRAPPER (Project Overview)
+    ============================================================================ */
+    .no-shadow-image-wrapper {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .no-shadow-image-wrapper img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================
+       NAVIGATION BAR
+  ============================== -->
+  <header class="navbar">
+  <img src="images/about/DBADD.png" alt="Dashboards and Daydreams">
+  <div class="nav-links">
+    <a href="index.html">Return</a>
+    <a href="#overview">Project Overview</a>
+  </div>
+</header>
+
+
+<!-- ============================
+     WEBSITE PROJECT INTRO
+============================== -->
+<section id="project-intro" class="section">
+    <div class="glass-card">
+      <h2>About This Website</h2>
+      <p>This website was fully custom-built to showcase my professional skills, projects, and certifications — every visual, layout, and detail was intentionally crafted to reflect both technical knowledge and creative personality.</p>
+      
+      <p>All design elements, including section titles, icons, and banners, were designed from scratch. I created and refined every image, wrote every piece of text, and styled the site layout using HTML and CSS with responsive design in mind. The site is divided into key areas like Projects, Skills, and Certificates to provide a comprehensive yet navigable portfolio experience.</p>
+  
+      <p>Rather than relying on templates, I built this project from the ground up to serve as a living demonstration of my front-end understanding and project branding skills. Each component — from custom headers to color themes — is the result of hands-on experimentation and learning.</p>
+    </div>
+  </section>
+
+<!-- ============================
+     PROJECT PHOTO CAROUSEL
+============================== -->
+<div class="container my-5">
+    <div id="projectCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner rounded shadow">
+  
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="images/projects/excel.jpg" class="d-block w-100" alt="Dashboard view 1">
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="images/projects/excel.jpg" class="d-block w-100" alt="Dashboard view 2">
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="images/projects/excel.jpg" class="d-block w-100" alt="Dashboard view 3">
+        </div>
+  
+      </div>
+  
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>  
+
+<!-- ============================
+     PROJECT OVERVIEW SECTION
+============================== -->
+<section id="overview" class="section">
+  <div class="glass-card">
+
+    <!-- Personal Image Inside the Card -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <img src="images/about/pixelme.png" 
+           alt="Pixel art of Christine working with cats"
+           style="width: 300px; max-width: 100%; border-radius: 12px;">
+    </div>
+
+    <!-- Content -->
+    <h3 style="color: #F9C3B8;">🎨 What I Built From Scratch</h3>
+<ul>
+  <li>🖼️ <strong>Full Custom Design:</strong> Designed every section header, project banner, and visual component from scratch using HTML, CSS, and image editing tools.</li>
+  <li>🌸 <strong>Personal Branding:</strong> Selected a consistent salmon/pink theme and stylized layout to match my professional identity across the site.</li>
+  <li>📱 <strong>Responsive Layout:</strong> Ensured the site adapts across desktop and mobile devices with Bootstrap-based components and flexible styling.</li>
+  <li>💻 <strong>Hand-Built Structure:</strong> Coded all sections — About, Skills, Projects, Certificates, and Contact — with no templates, creating a clean, readable format.</li>
+  <li>🎨 <strong>Creative Assets:</strong> Illustrated or modified key icons, added a custom pixel portrait, and embedded visual cues to guide users through the dashboard experience.</li>
+  <li>🧠 <strong>Storytelling Integration:</strong> Combined UX design with data analytics storytelling to make technical work approachable and visually engaging.</li>
+</ul>
+
+  </div>
+</section>
+
+
+
+  <!-- ============================
+       FOOTER
+  ============================== -->
+  <footer class="footer">
+    chrissy@dashboardsanddaydreams.com | +1(386)-801-7514 |
+    <a href="https://www.linkedin.com/in/christine-vargas-b8547a275/" target="_blank">
+      <img src="images/skills/Linked In.png" alt="LinkedIn"> LinkedIn
+    </a> |
+    <a href="https://github.com/PeskyPxlPixi" target="_blank">
+      <img src="images/skills/GetHub.png" alt="GitHub"> GitHub
+    </a>
+  </footer>
+</body>
+</html>
